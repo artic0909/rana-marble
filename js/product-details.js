@@ -177,3 +177,57 @@ function checkDelivery() {
   result.innerHTML =
     '<i class="fas fa-check-circle"></i> Delivery available! Estimated charge: ₹1,500 – ₹3,000 depending on weight. Free above ₹25,000.';
 }
+
+/* ─── Star Rating Picker ─── */
+let selectedRatingValue = 0;
+function setRating(val) {
+  selectedRatingValue = val;
+  document.getElementById("selectedRating").value = val;
+  document.querySelectorAll(".stars-input i").forEach((star, i) => {
+    star.className = i < val ? "fas fa-star" : "far fa-star";
+    star.style.color = i < val ? "#c9a84c" : "";
+  });
+}
+
+// Hover effect
+document.addEventListener("DOMContentLoaded", () => {
+  const stars = document.querySelectorAll(".stars-input i");
+  stars.forEach((star, i) => {
+    star.addEventListener("mouseenter", () => {
+      stars.forEach((s, j) => {
+        s.className = j <= i ? "fas fa-star" : "far fa-star";
+        s.style.color = j <= i ? "#c9a84c" : "";
+      });
+    });
+    star.addEventListener("mouseleave", () => {
+      stars.forEach((s, j) => {
+        s.className = j < selectedRatingValue ? "fas fa-star" : "far fa-star";
+        s.style.color = j < selectedRatingValue ? "#c9a84c" : "";
+      });
+    });
+  });
+});
+
+/* ─── Review Submit ─── */
+function submitReview(e) {
+  e.preventDefault();
+  const rating = document.getElementById("selectedRating").value;
+  if (!rating || rating === "0") {
+    alert("Please select a star rating before submitting.");
+    return;
+  }
+  const form = e.target;
+  form.style.opacity = "0.5";
+  form.style.pointerEvents = "none";
+  setTimeout(() => {
+    form.style.opacity = "1";
+    form.style.pointerEvents = "";
+    form.reset();
+    setRating(0);
+    selectedRatingValue = 0;
+    document.getElementById("reviewSuccess").style.display = "flex";
+    setTimeout(() => {
+      document.getElementById("reviewSuccess").style.display = "none";
+    }, 5000);
+  }, 800);
+}

@@ -306,6 +306,49 @@
                             WhatsApp</em> or <em>Email Enquiry</em> above — share your size, finish preference, and
                         delivery address. Our team will respond with pricing and estimated delivery within 24 hours.</p>
                 </div>
+
+                <!-- ─── WRITE A REVIEW ─── -->
+                <div class="write-review-section">
+                    <h3 class="write-review-title"><i class="fas fa-star"></i> Share Your Experience</h3>
+                    <form class="write-review-form" onsubmit="submitReview(event)">
+                        <div class="review-form-top">
+                            <div class="star-picker" id="starPicker">
+                                <span>Your Rating:</span>
+                                <div class="stars-input">
+                                    <i class="far fa-star" onclick="setRating(1)" data-val="1"></i>
+                                    <i class="far fa-star" onclick="setRating(2)" data-val="2"></i>
+                                    <i class="far fa-star" onclick="setRating(3)" data-val="3"></i>
+                                    <i class="far fa-star" onclick="setRating(4)" data-val="4"></i>
+                                    <i class="far fa-star" onclick="setRating(5)" data-val="5"></i>
+                                </div>
+                                <input type="hidden" id="selectedRating" value="0" />
+                            </div>
+                        </div>
+                        <div class="review-form-fields">
+                            <div class="rf-row">
+                                <div class="rf-col">
+                                    <label>Your Name</label>
+                                    <input type="text" placeholder="e.g. Ramesh Gupta" required />
+                                </div>
+                                <div class="rf-col">
+                                    <label>City / State</label>
+                                    <input type="text" placeholder="e.g. Jaipur, Rajasthan" />
+                                </div>
+                            </div>
+                            <div class="rf-col full">
+                                <label>Your Review</label>
+                                <textarea rows="4" placeholder="Share your experience with this product…"
+                                    required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn-wa-cta" style="border:none;cursor:pointer;margin-top:14px;">
+                            <i class="fas fa-paper-plane" style="margin-right:6px;"></i> Submit Review
+                        </button>
+                        <div id="reviewSuccess" class="review-success" style="display:none;">
+                            <i class="fas fa-check-circle"></i> Thank you! Your review has been submitted.
+                        </div>
+                    </form>
+                </div>
             </div>
 
         </div>
@@ -314,20 +357,20 @@
     <!-- ══════════════ TABS ══════════════ -->
     <section class="tabs-section">
         <div class="tabs-header">
-            <button class="tab-btn active" onclick="switchTab(this,'tab-desc')"><i class="fas fa-align-left"></i>
+            <button class="tab-btn active" onclick="switchTab(this,'tab-reviews')" id="tab-reviews-btn"><i
+                    class="fas fa-star"></i> Reviews (24)</button>
+            <button class="tab-btn" onclick="switchTab(this,'tab-desc')"><i class="fas fa-align-left"></i>
                 Description</button>
             <button class="tab-btn" onclick="switchTab(this,'tab-specs')"><i class="fas fa-list-ul"></i>
                 Specifications</button>
-            <button class="tab-btn" onclick="switchTab(this,'tab-reviews')" id="tab-reviews-btn"><i
-                    class="fas fa-star"></i> Reviews (24)</button>
             <button class="tab-btn" onclick="switchTab(this,'tab-shipping')"><i class="fas fa-truck"></i> Shipping &
                 Care</button>
             <button class="tab-btn" onclick="switchTab(this,'tab-custom')"><i class="fas fa-pencil-ruler"></i> Custom
                 Orders</button>
         </div>
 
-        <!-- ─── DESCRIPTION TAB ─── -->
-        <div class="tab-panel active" id="tab-desc">
+        <!-- ─── REVIEWS TAB ─── -->
+        <div class="tab-panel" id="tab-desc">
             <div class="desc-content">
                 <div class="desc-text">
                     <h3><i class="fas fa-om"></i> About This Mandir</h3>
@@ -521,8 +564,9 @@
             </div>
         </div>
 
-        <!-- ─── REVIEWS TAB ─── -->
-        <div class="tab-panel" id="tab-reviews">
+        <!-- ─── DESCRIPTION TAB ─── -->
+        <div class="tab-panel active" id="tab-reviews">
+
             <div class="reviews-summary">
                 <div class="big-rating">
                     <div class="big-num">4.9</div>
@@ -749,6 +793,7 @@
                     <div class="prod-info">
                         <div class="prod-cat">Open Style Mandirs</div>
                         <div class="prod-name">Peacock Arched Open Mandir</div>
+                        <div class="prod-name">Price: ₹125,000</div>
                         <div class="prod-meta">
                             <div class="prod-size"><i class="fas fa-ruler-combined"></i> 42 × 24 in</div>
                             <a href="https://wa.me/919876543210?text=Enquiry: Peacock Arched Open Mandir"
@@ -770,6 +815,7 @@
                     <div class="prod-info">
                         <div class="prod-cat">Gold Painted Mandirs</div>
                         <div class="prod-name">Om Suraj Gold-Painted Mandir</div>
+                        <div class="prod-name">Price: ₹125,000</div>
                         <div class="prod-meta">
                             <div class="prod-size"><i class="fas fa-ruler-combined"></i> 30 × 24 in</div>
                             <a href="https://wa.me/919876543210?text=Enquiry: Om Suraj Gold Painted Mandir"
@@ -791,6 +837,7 @@
                     <div class="prod-info">
                         <div class="prod-cat">Compact Mandirs</div>
                         <div class="prod-name">Om Surya Compact Mandir</div>
+                        <div class="prod-name">Price: ₹125,000</div>
                         <div class="prod-meta">
                             <div class="prod-size"><i class="fas fa-ruler-combined"></i> 30 × 24 in</div>
                             <a href="https://wa.me/919876543210?text=Enquiry: Om Surya Compact Mandir" class="btn-enq"
@@ -812,6 +859,7 @@
                     <div class="prod-info">
                         <div class="prod-cat">Eco Series</div>
                         <div class="prod-name">Classic Single Shikhara Mandir</div>
+                        <div class="prod-name">Price: ₹125,000</div>
                         <div class="prod-meta">
                             <div class="prod-size"><i class="fas fa-ruler-combined"></i> 24 × 24 in</div>
                             <a href="https://wa.me/919876543210?text=Enquiry: Classic Single Shikhara Mandir"

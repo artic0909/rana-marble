@@ -2361,3 +2361,144 @@ footer {
     padding: 7px 10px;
   }
 }
+
+/* ═══════════ WRITE A REVIEW SECTION ═══════════ */
+.write-review-section {
+  margin-top: 32px;
+  padding: 28px;
+  background: var(--cream);
+  border: 1px solid var(--border-gold);
+  border-radius: 10px;
+}
+
+.write-review-title {
+  font-family: "Cinzel", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--maroon);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.write-review-title i {
+  color: var(--gold);
+}
+
+.write-review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.review-form-top {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.star-picker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Cinzel", serif;
+  font-size: 0.82rem;
+  color: var(--text-mid);
+}
+
+.stars-input {
+  display: flex;
+  gap: 6px;
+}
+
+.stars-input i {
+  font-size: 1.5rem;
+  color: #ddd;
+  cursor: pointer;
+  transition: color 0.15s, transform 0.15s;
+}
+
+.stars-input i:hover {
+  transform: scale(1.2);
+}
+
+.review-form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rf-row {
+  display: flex;
+  gap: 16px;
+}
+
+.rf-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rf-col.full {
+  flex: unset;
+  width: 100%;
+}
+
+.rf-col label {
+  font-family: "Cinzel", serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.rf-col input,
+.rf-col textarea {
+  padding: 11px 14px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: "Crimson Pro", serif;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: white;
+  transition: border-color 0.25s, box-shadow 0.25s;
+  resize: vertical;
+  width: 100%;
+}
+
+.rf-col input:focus,
+.rf-col textarea:focus {
+  outline: none;
+  border-color: var(--saffron);
+  box-shadow: 0 0 0 3px rgba(212, 114, 42, 0.1);
+}
+
+.review-success {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  margin-top: 10px;
+  border: 1px solid #c8e6c9;
+}
+
+.review-success i {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .rf-row {
+    flex-direction: column;
+  }
+
+  .write-review-section {
+    padding: 18px;
+  }
+}
