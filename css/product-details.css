@@ -51,23 +51,43 @@ body {
 }
 
 /* ═══════════ ANNOUNCE BAR ═══════════ */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
 .announce-bar {
   background: linear-gradient(90deg,
       var(--maroon),
       var(--deep-purple),
       var(--maroon));
   color: var(--gold-lt);
-  text-align: center;
-  padding: 8px 16px;
-  font-size: 0.78rem;
+  padding: 8px 0;
+  font-size: 0.82rem;
   letter-spacing: 0.12em;
   font-family: "Cinzel", serif;
   overflow: hidden;
   white-space: nowrap;
 }
 
+.announce-track {
+  display: inline-flex;
+  animation: marquee-scroll 22s linear infinite;
+  will-change: transform;
+}
+
+.announce-track:hover {
+  animation-play-state: paused;
+}
+
 .announce-bar span {
-  margin: 0 14px;
+  margin: 0 24px;
+  display: inline-block;
 }
 
 /* ═══════════ TOPBAR ═══════════ */
