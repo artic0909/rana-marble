@@ -54,7 +54,19 @@
                     <li><a href="products.html" class="active">All Products</a></li>
                     <li><a href="mandirs.html">Mandirs</a></li>
                     <li><a href="idols.html">Idols</a></li>
-                    <li><a href="custom.html">Custom Orders</a></li>
+                    <li>
+                        <div class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mandirs.html">Home Mandirs</a></li>
+                                <li><a href="idols.html">Marble Idols</a></li>
+                                <li><a href="pillars.html">Pillars & Columns</a></li>
+                                <li><a href="wall-panels.html">Jaali Panels</a></li>
+                                <li><a href="fountains.html">Marble Fountains</a></li>
+                                <li><a href="custom.html">Custom Orders</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -74,7 +86,19 @@
             <a href="products.html" class="active">📿 All Products</a>
             <a href="mandirs.html">🛕 Mandirs</a>
             <a href="idols.html">🪔 Idols</a>
-            <a href="custom.html">✍️ Custom Orders</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    📁 Categories <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="mandirs.html">Home Mandirs</a>
+                    <a href="idols.html">Marble Idols</a>
+                    <a href="pillars.html">Pillars & Columns</a>
+                    <a href="wall-panels.html">Jaali Panels</a>
+                    <a href="fountains.html">Marble Fountains</a>
+                    <a href="custom.html">Custom Orders</a>
+                </div>
+            </div>
             <a href="about.html">🙏 About Us</a>
             <a href="wishlist.html">❤️ Wishlist</a>
             <a href="contact.html">📞 Contact</a>
@@ -366,8 +390,7 @@
                 <div class="product-card" data-cat="mandir" data-sub="flagship" data-size="36x24" data-finish="white"
                     data-price="85000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Royal Tri-Shikhara Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Royal Tri-Shikhara Mandir" loading="lazy" />
                         <div class="product-badge">Bestseller</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -396,8 +419,7 @@
                 <div class="product-card" data-cat="painted" data-sub="flagship" data-size="30x24" data-finish="gold"
                     data-price="72000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Om Suraj Gold Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Om Suraj Gold Mandir" loading="lazy" />
                         <div class="product-badge new">New Arrival</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -426,8 +448,7 @@
                 <div class="product-card" data-cat="mandir" data-sub="signature" data-size="42x24" data-finish="white"
                     data-price="110000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Peacock Arched Open Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Peacock Arched Open Mandir" loading="lazy" />
                         <div class="product-badge custom">Custom</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -456,8 +477,7 @@
                 <div class="product-card" data-cat="painted" data-sub="signature" data-size="30x24" data-finish="gold"
                     data-price="65000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Om Surya Compact Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Om Surya Compact Mandir" loading="lazy" />
                         <div class="product-badge">Popular</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -486,8 +506,7 @@
                 <div class="product-card" data-cat="mandir" data-sub="eco" data-size="24x24" data-finish="white"
                     data-price="35000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Classic Single Shikhara Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Classic Single Shikhara Mandir" loading="lazy" />
                         <div class="product-badge" style="background:var(--deep-purple);">Eco Series</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -516,8 +535,7 @@
                 <div class="product-card" data-cat="idol" data-sub="signature" data-size="24x24" data-finish="white"
                     data-price="18000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Ganesh Marble Idol" loading="lazy" />
+                        <img src="./img/hero.png" alt="Ganesh Marble Idol" loading="lazy" />
                         <div class="product-badge">Idol</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -546,8 +564,7 @@
                 <div class="product-card" data-cat="mandir" data-sub="flagship" data-size="48x24" data-finish="white"
                     data-price="145000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Grand Panchashikhara Temple Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Grand Panchashikhara Temple Mandir" loading="lazy" />
                         <div class="product-badge" style="background:#7B4F00;">Grand</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -576,8 +593,7 @@
                 <div class="product-card" data-cat="jaali" data-sub="signature" data-size="36x24" data-finish="white"
                     data-price="28000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Lotus Jaali Panel" loading="lazy" />
+                        <img src="./img/hero.png" alt="Lotus Jaali Panel" loading="lazy" />
                         <div class="product-badge" style="background:var(--indigo);">Panel</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -606,8 +622,7 @@
                 <div class="product-card" data-cat="idol" data-sub="eco" data-size="24x24" data-finish="white"
                     data-price="12000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Lakshmi Marble Idol" loading="lazy" />
+                        <img src="./img/hero.png" alt="Lakshmi Marble Idol" loading="lazy" />
                         <div class="product-badge">Idol</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -636,8 +651,7 @@
                 <div class="product-card" data-cat="painted" data-sub="eco" data-size="24x24" data-finish="multi"
                     data-price="42000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Multicolour Painted Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Multicolour Painted Mandir" loading="lazy" />
                         <div class="product-badge painted">Painted</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -666,8 +680,7 @@
                 <div class="product-card" data-cat="fountain" data-sub="signature" data-size="36x32" data-finish="white"
                     data-price="95000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Tiered Marble Fountain" loading="lazy" />
+                        <img src="./img/hero.png" alt="Tiered Marble Fountain" loading="lazy" />
                         <div class="product-badge" style="background:#1A5276;">Fountain</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
@@ -696,8 +709,7 @@
                 <div class="product-card" data-cat="mandir" data-sub="custom" data-size="60x24" data-finish="white"
                     data-price="200000">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Bespoke Full Room Temple" loading="lazy" />
+                        <img src="./img/hero.png" alt="Bespoke Full Room Temple" loading="lazy" />
                         <div class="product-badge custom">Custom</div>
                         <div class="product-actions">
                             <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i

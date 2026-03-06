@@ -60,7 +60,19 @@
                     <li><a href="products.html">All Products</a></li>
                     <li><a href="mandirs.html">Mandirs</a></li>
                     <li><a href="idols.html">Idols</a></li>
-                    <li><a href="custom.html">Custom Orders</a></li>
+                    <li>
+                        <div class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mandirs.html">Home Mandirs</a></li>
+                                <li><a href="idols.html">Marble Idols</a></li>
+                                <li><a href="pillars.html">Pillars & Columns</a></li>
+                                <li><a href="wall-panels.html">Jaali Panels</a></li>
+                                <li><a href="fountains.html">Marble Fountains</a></li>
+                                <li><a href="custom.html">Custom Orders</a></li>
+                            </ul>
+                        </div>
+                    </li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
@@ -83,7 +95,19 @@
             <a href="products.html">📿 All Products</a>
             <a href="mandirs.html">🛕 Mandirs</a>
             <a href="idols.html">🪔 Idols</a>
-            <a href="custom.html">✍️ Custom Orders</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    📁 Categories <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="mandirs.html">Home Mandirs</a>
+                    <a href="idols.html">Marble Idols</a>
+                    <a href="pillars.html">Pillars & Columns</a>
+                    <a href="wall-panels.html">Jaali Panels</a>
+                    <a href="fountains.html">Marble Fountains</a>
+                    <a href="custom.html">Custom Orders</a>
+                </div>
+            </div>
             <a href="about.html">🙏 About Us</a>
             <a href="wishlist.html">❤️ Wishlist</a>
             <a href="contact.html">📞 Contact</a>
@@ -113,8 +137,7 @@
                     <a href="products.html" class="btn-primary">
                         <i class="fas fa-th-large"></i> Explore Collection
                     </a>
-                    <a href="./img/hero.png"
-                        class="btn-secondary" target="_blank">
+                    <a href="./img/hero.png" class="btn-secondary" target="_blank">
                         <i class="fab fa-whatsapp"></i> Quick Enquiry
                     </a>
                 </div>
@@ -138,8 +161,7 @@
 
             <div class="hero-image-stack">
                 <div class="hero-img-frame"></div>
-                <img src="./img/hero.png"
-                    alt="Handcrafted White Marble Mandir by Rana Marble" class="hero-img-main" />
+                <img src="./img/hero.png" alt="Handcrafted White Marble Mandir by Rana Marble" class="hero-img-main" />
                 <div class="hero-badge">
                     <strong>100%</strong>
                     Makrana<br />White Marble
@@ -235,8 +257,7 @@
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Royal Tri-Shikhara White Marble Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Royal Tri-Shikhara White Marble Mandir" loading="lazy" />
                         <div class="product-badge">Bestseller</div>
                         <div class="product-actions">
                             <button class="action-btn" title="Add to Wishlist" onclick="toggleWishlist(this)">
@@ -270,8 +291,7 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Om Suraj Gold-Painted Marble Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Om Suraj Gold-Painted Marble Mandir" loading="lazy" />
                         <div class="product-badge new">New Arrival</div>
                         <div class="product-actions">
                             <button class="action-btn" title="Add to Wishlist" onclick="toggleWishlist(this)">
@@ -305,8 +325,7 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Peacock Arched Open Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Peacock Arched Open Mandir" loading="lazy" />
                         <div class="product-badge custom">Custom</div>
                         <div class="product-actions">
                             <button class="action-btn" title="Add to Wishlist" onclick="toggleWishlist(this)">
@@ -340,8 +359,7 @@
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        <img src="./img/hero.png"
-                            alt="Om Surya Gold Compact Mandir" loading="lazy" />
+                        <img src="./img/hero.png" alt="Om Surya Gold Compact Mandir" loading="lazy" />
                         <div class="product-badge">Popular</div>
                         <div class="product-actions">
                             <button class="action-btn" title="Add to Wishlist" onclick="toggleWishlist(this)">
