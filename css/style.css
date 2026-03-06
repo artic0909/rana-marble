@@ -536,7 +536,6 @@ header {
   gap: 60px;
 }
 
-.hero-text {}
 
 .hero-tag {
   display: inline-flex;
@@ -1088,6 +1087,31 @@ header {
   background: linear-gradient(135deg, #25d366, #128c7e);
 }
 
+.btn-add-list {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: "Cinzel", serif;
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  background: var(--maroon);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s;
+  border: 1px solid var(--maroon);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-add-list:hover {
+  color: var(--maroon);
+  background-color: white;
+  box-shadow: 0 4px 14px rgba(107, 26, 26, 0.2);
+}
+
 /* ══════════════════════════════════════
        WHY US
     ══════════════════════════════════════ */
@@ -1196,7 +1220,6 @@ header {
   color: var(--saffron-lt);
 }
 
-.testi-section .gold-line {}
 
 .testi-grid {
   display: grid;
