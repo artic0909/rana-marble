@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Products – Rana Marble | Divine Marble Mandirs & Idols</title>
+    <meta name="description"
+        content="Browse Rana Marble's complete collection of handcrafted white Makrana marble mandirs, idols, jaali panels and more. Filter by category, size and finish." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="./css/product.css">
+</head>
+
+<body>
+
+    <!-- Announce Bar -->
+    <div class="announce-bar">
+        <span>🪔 Handcrafted with Devotion</span>
+        <span>✦</span>
+        <span>Free Delivery on Orders Above ₹25,000</span>
+        <span>✦</span>
+        <span>Custom Size & Design Available</span>
+        <span>✦</span>
+        <span>Premium White Makrana Marble</span>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a>
+        <a href="mailto:info@ranamarblee.com"><i class="fas fa-envelope"></i> info@ranamarblee.com</a>
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-om"></i></div>
+                <div class="logo-text">
+                    <span class="brand">Rana Marble</span>
+                    <span class="sub">Divine Craftsmanship</span>
+                </div>
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">All Products</a></li>
+                    <li><a href="mandirs.html">Mandirs</a></li>
+                    <li><a href="idols.html">Idols</a></li>
+                    <li><a href="custom.html">Custom Orders</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="search.html" class="nav-icon-btn" title="Search"><i class="fas fa-search"></i></a>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist"><i class="fas fa-heart"></i><span
+                        class="badge" id="wishBadge">0</span></a>
+                <a href="contact.html" class="btn-enquire-nav"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+                <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">🏠 Home</a>
+            <a href="products.html" class="active">📿 All Products</a>
+            <a href="mandirs.html">🛕 Mandirs</a>
+            <a href="idols.html">🪔 Idols</a>
+            <a href="custom.html">✍️ Custom Orders</a>
+            <a href="about.html">🙏 About Us</a>
+            <a href="wishlist.html">❤️ Wishlist</a>
+            <a href="contact.html">📞 Contact</a>
+        </nav>
+    </header>
+
+    <!-- Page Banner -->
+    <div class="page-banner">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>All Products</span>
+        </div>
+        <h1>Our Divine <span>Collection</span></h1>
+        <p>Handcrafted sacred marble mandirs & idols — each a labour of devotion</p>
+    </div>
+
+    <!-- Mobile Filter Overlay -->
+    <div class="filter-overlay" id="filterOverlay" onclick="closeMobileFilter()"></div>
+    <div class="sidebar-mobile" id="mobileSidebar">
+        <div class="sidebar-mobile-close">
+            <h3><i class="fas fa-sliders-h"></i> &nbsp; Filter Products</h3>
+            <button onclick="closeMobileFilter()"><i class="fas fa-times"></i></button>
+        </div>
+        <div id="mobileSidebarContent"></div>
+        <div class="sidebar-apply">
+            <button class="btn-apply-filter" onclick="applyFilters(); closeMobileFilter();">
+                <i class="fas fa-check-circle"></i> Apply Filters
+            </button>
+        </div>
+    </div>
+
+    <!-- ═══ SHOP WRAPPER ═══ -->
+    <div class="shop-wrapper">
+
+        <!-- ─── SIDEBAR ─── -->
+        <aside class="sidebar" id="desktopSidebar">
+
+            <div class="sidebar-header">
+                <h3><i class="fas fa-sliders-h"></i> Filter Products</h3>
+                <button class="btn-clear-all" onclick="clearAllFilters()">Clear All</button>
+            </div>
+
+            <!-- Category -->
+            <div class="filter-group" id="fg-category">
+                <div class="filter-group-header" onclick="toggleGroup('fg-category')">
+                    <h4><i class="fas fa-th-large"></i> Category</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="filter-body">
+                    <label class="filter-item"><input type="checkbox" name="cat" value="all" checked
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">All Products</span><span
+                            class="filter-count">48</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="cat" value="mandir"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Home Mandirs</span><span
+                            class="filter-count">18</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="cat" value="idol" onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Marble Idols</span><span
+                            class="filter-count">12</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="cat" value="painted"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Gold Painted Mandirs</span><span
+                            class="filter-count">9</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="cat" value="jaali"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Jaali Panels</span><span
+                            class="filter-count">6</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="cat" value="fountain"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Marble Fountains</span><span
+                            class="filter-count">3</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sub Category -->
+            <div class="filter-group" id="fg-sub">
+                <div class="filter-group-header" onclick="toggleGroup('fg-sub')">
+                    <h4><i class="fas fa-layer-group"></i> Sub Categories</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="filter-body">
+                    <label class="filter-item"><input type="checkbox" name="sub" value="flagship"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Flagship</span><span
+                            class="filter-count">10</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="sub" value="signature"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Signature</span><span
+                            class="filter-count">15</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="sub" value="eco" onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Eco Series</span><span
+                            class="filter-count">8</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="sub" value="custom"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Custom Made</span><span
+                            class="filter-count">5</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Sizes -->
+            <div class="filter-group" id="fg-size">
+                <div class="filter-group-header" onclick="toggleGroup('fg-size')">
+                    <h4><i class="fas fa-ruler-combined"></i> Sizes</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="filter-body">
+                    <label class="filter-item"><input type="checkbox" name="size" value="24x24"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Width: 24 in, Depth: 24 in</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="size" value="30x24"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Width: 30 in, Depth: 24 in</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="size" value="36x24"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Width: 36 in, Depth: 24 in</span>
+                    </label>
+                    <label class="filter-item"><input type="checkbox" name="size" value="36x32"
+                            onchange="applyFilters()">
+                        <div class="custom-check"></div><span class="filter-label">Width: 36 in, Depth: 32 in</span>
+                    </label>
+                    <div id="moresSizes" style="display:none;">
+                        <label class="filter-item"><input type="checkbox" name="size" value="42x24"
+                                onchange="applyFilters()">
+                            <div class="custom-check"></div><span class="filter-label">Width: 42 in, Depth: 24 in</span>
+                        </label>
+                        <label class="filter-item"><input type="checkbox" name="size" value="48x24"
+                                onchange="applyFilters()">
+                            <div class="custom-check"></div><span class="filter-label">Width: 48 in, Depth: 24 in</span>
+                        </label>
+                        <label class="filter-item"><input type="checkbox" name="size" value="54x24"
+                                onchange="applyFilters()">
+                            <div class="custom-check"></div><span class="filter-label">Width: 54 in, Depth: 24 in</span>
+                        </label>
+                        <label class="filter-item"><input type="checkbox" name="size" value="60x24"
+                                onchange="applyFilters()">
+                            <div class="custom-check"></div><span class="filter-label">Width: 60 in, Depth: 24 in</span>
+                        </label>
+                    </div>
+                    <button class="view-more-btn" id="sizeMoreBtn" onclick="toggleMoreSizes()">
+                        <i class="fas fa-plus-circle"></i> View More (4)
+                    </button>
+                </div>
+            </div>
+
+            <!-- Finish / Color -->
+            <div class="filter-group" id="fg-finish">
+                <div class="filter-group-header" onclick="toggleGroup('fg-finish')">
+                    <h4><i class="fas fa-palette"></i> Finish & Colour</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="swatch-grid">
+                    <div class="swatch-item active" onclick="toggleSwatch(this)" title="Pure White">
+                        <div class="swatch" style="background:#F8F5EE; border:1.5px solid #ddd;"></div>
+                        <span class="swatch-label">White</span>
+                    </div>
+                    <div class="swatch-item" onclick="toggleSwatch(this)" title="Gold Painted">
+                        <div class="swatch" style="background:linear-gradient(135deg,#C9A84C,#F0D080);"></div>
+                        <span class="swatch-label">Gold</span>
+                    </div>
+                    <div class="swatch-item" onclick="toggleSwatch(this)" title="Multicolour">
+                        <div class="swatch" style="background:conic-gradient(#D4722A,#C9A84C,#6B1A1A,#2D1B4E,#D4722A);">
+                        </div>
+                        <span class="swatch-label">Multi</span>
+                    </div>
+                    <div class="swatch-item" onclick="toggleSwatch(this)" title="Natural Polish">
+                        <div class="swatch" style="background:linear-gradient(135deg,#E8E0D0,#C0B89A);"></div>
+                        <span class="swatch-label">Natural</span>
+                    </div>
+                    <div class="swatch-item" onclick="toggleSwatch(this)" title="Sandstone Beige">
+                        <div class="swatch" style="background:linear-gradient(135deg,#D4B896,#B89070);"></div>
+                        <span class="swatch-label">Beige</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Price Range -->
+            <div class="filter-group" id="fg-price">
+                <div class="filter-group-header" onclick="toggleGroup('fg-price')">
+                    <h4><i class="fas fa-rupee-sign"></i> Price Range</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="price-range-wrap">
+                    <div class="price-inputs">
+                        <div class="price-input-group">
+                            <span>₹</span>
+                            <input type="number" id="priceMin" value="5000" min="5000" max="500000" placeholder="Min"
+                                onchange="updateRange()" />
+                        </div>
+                        <span class="price-dash">–</span>
+                        <div class="price-input-group">
+                            <span>₹</span>
+                            <input type="number" id="priceMax" value="500000" min="5000" max="500000" placeholder="Max"
+                                onchange="updateRange()" />
+                        </div>
+                    </div>
+                    <div class="range-slider-wrap">
+                        <div class="range-track"></div>
+                        <div class="range-fill" id="rangeFill"></div>
+                        <input type="range" class="dual-range" id="rangeMin" min="5000" max="500000" value="5000"
+                            step="1000" oninput="syncRange('min')" />
+                        <input type="range" class="dual-range" id="rangeMax" min="5000" max="500000" value="500000"
+                            step="1000" oninput="syncRange('max')" />
+                    </div>
+                    <div class="range-labels"><span>₹5,000</span><span>₹5,00,000+</span></div>
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="filter-group" id="fg-rating">
+                <div class="filter-group-header" onclick="toggleGroup('fg-rating')">
+                    <h4><i class="fas fa-star"></i> Customer Rating</h4>
+                    <div class="filter-toggle"><i class="fas fa-chevron-down"></i></div>
+                </div>
+                <div class="filter-body">
+                    <label class="filter-item"><input type="radio" name="rating" value="4" onchange="applyFilters()">
+                        <div class="custom-check" style="border-radius:50%;"></div><span class="filter-label"
+                            style="color:#C9A84C;">★★★★☆ &nbsp;4+ Stars</span>
+                    </label>
+                    <label class="filter-item"><input type="radio" name="rating" value="3" onchange="applyFilters()">
+                        <div class="custom-check" style="border-radius:50%;"></div><span class="filter-label"
+                            style="color:#C9A84C;">★★★☆☆ &nbsp;3+ Stars</span>
+                    </label>
+                    <label class="filter-item"><input type="radio" name="rating" value="any" checked
+                            onchange="applyFilters()">
+                        <div class="custom-check" style="border-radius:50%;"></div><span class="filter-label">Any
+                            Rating</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="sidebar-apply">
+                <button class="btn-apply-filter" onclick="applyFilters()">
+                    <i class="fas fa-check-circle"></i> Apply Filters
+                </button>
+            </div>
+        </aside>
+
+        <!-- ─── PRODUCTS AREA ─── -->
+        <section class="products-area">
+
+            <!-- Toolbar -->
+            <div class="toolbar">
+                <div class="toolbar-left">
+                    <!-- Mobile filter button -->
+                    <button class="btn-mobile-filter" onclick="openMobileFilter()">
+                        <i class="fas fa-sliders-h"></i> Filters <span id="filterBadgeMob"
+                            style="background:rgba(255,255,255,0.25);padding:1px 7px;border-radius:10px;font-size:0.65rem;"></span>
+                    </button>
+                    <div class="result-count">Showing <strong id="showingCount">12</strong> of <strong>48</strong>
+                        products</div>
+                    <div class="active-filters" id="activeTags"></div>
+                </div>
+                <div class="toolbar-right">
+                    <select class="sort-select" onchange="sortProducts(this.value)">
+                        <option value="featured">✦ Featured</option>
+                        <option value="newest">Newest First</option>
+                        <option value="price-asc">Price: Low to High</option>
+                        <option value="price-desc">Price: High to Low</option>
+                        <option value="rating">Top Rated</option>
+                        <option value="name-asc">Name: A–Z</option>
+                    </select>
+                    <div class="view-toggle">
+                        <button class="view-btn active" id="gridViewBtn" onclick="setView('grid')" title="Grid View"><i
+                                class="fas fa-th"></i></button>
+                        <button class="view-btn" id="listViewBtn" onclick="setView('list')" title="List View"><i
+                                class="fas fa-list"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid" id="productGrid">
+
+                <!-- Card 1 -->
+                <div class="product-card" data-cat="mandir" data-sub="flagship" data-size="36x24" data-finish="white"
+                    data-price="85000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Royal Tri-Shikhara Mandir" loading="lazy" />
+                        <div class="product-badge">Bestseller</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Royal Tri-Shikhara Mandir"
+                                class="action-btn" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Home Mandirs · Flagship</div>
+                        <h3 class="product-name">Royal Tri-Shikhara Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Three-spired masterpiece with intricate floral carvings, swastika motifs
+                            and peacock finials. Pure white Makrana marble.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 36 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Royal Tri-Shikhara Mandir"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="product-card" data-cat="painted" data-sub="flagship" data-size="30x24" data-finish="gold"
+                    data-price="72000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Om Suraj Gold Mandir" loading="lazy" />
+                        <div class="product-badge new">New Arrival</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Om Suraj Gold Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Gold Painted Mandirs · Flagship</div>
+                        <h3 class="product-name">Om Suraj Gold-Painted Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Resplendent Om in a sun mandala, embellished with 22K gold paint. Marble
+                            base with multicolour painted finish.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 30 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Om Suraj Gold Mandir" class="btn-enquire"
+                                target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="product-card" data-cat="mandir" data-sub="signature" data-size="42x24" data-finish="white"
+                    data-price="110000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Peacock Arched Open Mandir" loading="lazy" />
+                        <div class="product-badge custom">Custom</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Peacock Arched Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Open Style Mandirs · Signature</div>
+                        <h3 class="product-name">Peacock Arched Open Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Soaring peacock crest, perforated jaali arches and balustrade verandah.
+                            Elegant open-front design for spacious puja rooms.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 42 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Peacock Arched Mandir" class="btn-enquire"
+                                target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="product-card" data-cat="painted" data-sub="signature" data-size="30x24" data-finish="gold"
+                    data-price="65000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Om Surya Compact Mandir" loading="lazy" />
+                        <div class="product-badge">Popular</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Om Surya Compact Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Compact Mandirs · Signature</div>
+                        <h3 class="product-name">Om Surya Compact Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Full peacock canopy, gold sun Om motif and ornate balcony railing. Ideal
+                            for apartments and smaller puja rooms.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 30 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Om Surya Compact Mandir"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="product-card" data-cat="mandir" data-sub="eco" data-size="24x24" data-finish="white"
+                    data-price="35000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Classic Single Shikhara Mandir" loading="lazy" />
+                        <div class="product-badge" style="background:var(--deep-purple);">Eco Series</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Classic Single Shikhara Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Home Mandirs · Eco Series</div>
+                        <h3 class="product-name">Classic Single Shikhara Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Simple, elegant single-spired mandir with traditional floral border
+                            carvings. Perfect starter mandir for any home.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 24 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Classic Single Shikhara Mandir"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="product-card" data-cat="idol" data-sub="signature" data-size="24x24" data-finish="white"
+                    data-price="18000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Ganesh Marble Idol" loading="lazy" />
+                        <div class="product-badge">Idol</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Ganesh Marble Idol"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Marble Idols · Signature</div>
+                        <h3 class="product-name">Ganesh Marble Idol</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Hand-carved sitting Ganesh idol in pure white Makrana marble. Detailed
+                            trunk, crown, and lotus base — auspicious for any home.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 12 × 8 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Ganesh Marble Idol" class="btn-enquire"
+                                target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="product-card" data-cat="mandir" data-sub="flagship" data-size="48x24" data-finish="white"
+                    data-price="145000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Grand Panchashikhara Temple Mandir" loading="lazy" />
+                        <div class="product-badge" style="background:#7B4F00;">Grand</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Grand Panchashikhara Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Home Mandirs · Flagship</div>
+                        <h3 class="product-name">Grand Panchashikhara Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Five-spired grand mandir with elaborate peacock motifs, bell hangings,
+                            dual-tier platform and stepped entrance.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 48 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Grand Panchashikhara Mandir"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="product-card" data-cat="jaali" data-sub="signature" data-size="36x24" data-finish="white"
+                    data-price="28000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Lotus Jaali Panel" loading="lazy" />
+                        <div class="product-badge" style="background:var(--indigo);">Panel</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Lotus Jaali Panel"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Jaali Panels · Signature</div>
+                        <h3 class="product-name">Lotus Jaali Decorative Panel</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Intricate perforated lotus pattern jaali panel. Ideal as room divider,
+                            window screen, or wall décor in puja rooms.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 36 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Lotus Jaali Panel" class="btn-enquire"
+                                target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="product-card" data-cat="idol" data-sub="eco" data-size="24x24" data-finish="white"
+                    data-price="12000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Lakshmi Marble Idol" loading="lazy" />
+                        <div class="product-badge">Idol</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Lakshmi Marble Idol"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Marble Idols · Eco Series</div>
+                        <h3 class="product-name">Lakshmi Marble Idol</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Seated Goddess Lakshmi in pure white marble with detailed ornamental
+                            carving, lotus base and delicate crown.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 10 × 7 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Lakshmi Marble Idol" class="btn-enquire"
+                                target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="product-card" data-cat="painted" data-sub="eco" data-size="24x24" data-finish="multi"
+                    data-price="42000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Multicolour Painted Mandir" loading="lazy" />
+                        <div class="product-badge painted">Painted</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Multicolour Painted Mandir"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Gold Painted Mandirs · Eco</div>
+                        <h3 class="product-name">Multicolour Painted Compact Mandir</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Vibrant multicolour traditional painting over white marble. Om symbol,
+                            lotus motifs and saffron detailing throughout.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 24 × 24 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Multicolour Painted Mandir"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="product-card" data-cat="fountain" data-sub="signature" data-size="36x32" data-finish="white"
+                    data-price="95000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Tiered Marble Fountain" loading="lazy" />
+                        <div class="product-badge" style="background:#1A5276;">Fountain</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Tiered Marble Fountain"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Marble Fountains · Signature</div>
+                        <h3 class="product-name">Tiered Lotus Marble Fountain</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Three-tier cascading water fountain with lotus carvings and floral
+                            motifs. Ideal for garden, courtyard, or foyer.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 36 × 32 in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Tiered Marble Fountain"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="product-card" data-cat="mandir" data-sub="custom" data-size="60x24" data-finish="white"
+                    data-price="200000">
+                    <div class="product-img-wrap">
+                        <img src="./img/hero.png"
+                            alt="Bespoke Full Room Temple" loading="lazy" />
+                        <div class="product-badge custom">Custom</div>
+                        <div class="product-actions">
+                            <button class="action-btn" onclick="toggleWishlist(this)" title="Wishlist"><i
+                                    class="fas fa-heart"></i></button>
+                            <a href="product-detail.html" class="action-btn" title="View Details"><i
+                                    class="fas fa-eye"></i></a>
+                            <a href="https://wa.me/919876543210?text=I am interested in Bespoke Full Room Temple"
+                                class="action-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <div class="product-cat">Home Mandirs · Custom Made</div>
+                        <h3 class="product-name">Bespoke Full-Room Temple</h3>
+                        <h3 class="product-name">Price: ₹ 1,50,000</h3>
+                        <p class="product-desc">Complete custom mandir installation spanning an entire puja room. Your
+                            design, your deity, your dimensions — fully bespoke.</p>
+                        <div class="product-meta">
+                            <div class="product-size"><i class="fas fa-ruler-combined"></i> 60 × 24+ in</div>
+                            <a href="https://wa.me/919876543210?text=Enquiry: Bespoke Full Room Temple"
+                                class="btn-enquire" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /product-grid -->
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <a href="#" class="page-btn prev"><i class="fas fa-chevron-left"></i> Prev</a>
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <span class="page-dots">···</span>
+                <a href="#" class="page-btn">8</a>
+                <a href="#" class="page-btn next">Next <i class="fas fa-chevron-right"></i></a>
+            </div>
+
+        </section>
+    </div><!-- /shop-wrapper -->
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919876543210?text=Namaste! I want to enquire about marble mandirs." class="float-wa"
+        target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <a href="#" class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></a>
+
+    <!-- ─── FOOTER ─── -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" style="background:linear-gradient(135deg,var(--saffron),var(--maroon));"><i
+                            class="fas fa-om"></i></div>
+                    <div class="logo-text">
+                        <span class="brand">Rana Marble</span>
+                        <span class="sub">Divine Craftsmanship</span>
+                    </div>
+                </div>
+                <p class="footer-about">For over 18 years, Rana Marble has been crafting sacred marble mandirs and
+                    spiritual décor with devotion from the heart of Rajasthan.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://wa.me/919876543210" class="social-btn" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>All Products</a></li>
+                    <li><a href="mandirs.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>Mandirs</a></li>
+                    <li><a href="idols.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>Marble Idols</a></li>
+                    <li><a href="custom.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>Custom Orders</a>
+                    </li>
+                    <li><a href="wishlist.html"><i class="fas fa-chevron-right"
+                                style="font-size:.7rem;color:var(--saffron);margin-right:6px;"></i>My Wishlist</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Home Mandirs</a></li>
+                    <li><a href="#">Gold Painted</a></li>
+                    <li><a href="#">Marble Idols</a></li>
+                    <li><a href="#">Jaali Panels</a></li>
+                    <li><a href="#">Pillars & Columns</a></li>
+                    <li><a href="#">Marble Fountains</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Makrana, Nagaur, Rajasthan –
+                            341505</span></div>
+                    <div class="contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+919876543210">+91 98765
+                            43210</a></div>
+                    <div class="contact-item"><i class="fab fa-whatsapp"></i><a href="https://wa.me/919876543210"
+                            target="_blank">WhatsApp Now</a></div>
+                    <div class="contact-item"><i class="fas fa-envelope"></i><a
+                            href="mailto:info@ranamarblee.com">info@ranamarblee.com</a></div>
+                    <div class="contact-item"><i class="fas fa-clock"></i><span>Mon – Sat: 9AM – 7PM IST</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Rana Marble. All Rights Reserved. &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a
+                    href="#">Terms of Use</a></span>
+            <span>Made with 🙏 in Rajasthan, India</span>
+        </div>
+    </footer>
+
+    <script src="./js/product.js"></script>
+
+</body>
+
+</html>
