@@ -455,7 +455,7 @@ header {
     ══════════════════════════════════════ */
 .hero {
   position: relative;
-  min-height: 92vh;
+  min-height: 46vh;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -1027,11 +1027,15 @@ header {
 
 .product-name {
   font-family: "Cinzel", serif;
-  font-size: 0.95rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--text-dark);
   margin-bottom: 8px;
   line-height: 1.3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .product-desc {
@@ -1988,7 +1992,7 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .product-grid.list-view .product-card {
@@ -2079,7 +2083,7 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .trust-row {
@@ -2089,4 +2093,15 @@ footer {
   .related-grid {
     grid-template-columns: 1fr;
   }
+}
+@media (max-width: 768px) {
+  .hero-slide img { filter: brightness(0.85) !important; }
+  .hero-text { display: none !important; }
+  .logo-text .brand { font-size: 0.95rem !important; }
+  .logo-text .sub { font-size: 0.5rem !important; }
+  .nav-inner { padding: 0 5px !important; gap: 5px !important; }
+  .nav-actions { gap: 6px !important; }
+  .nav-icon-btn { width: 34px !important; height: 34px !important; font-size: 0.85rem !important; margin: 0 2px; }
+  .hero { min-height: 38vh !important; }
+  .product-name { font-size: 0.72rem !important; }
 }
