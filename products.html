@@ -41,6 +41,7 @@
             box-shadow: 0 4px 14px rgba(107, 26, 26, 0.2);
         }
     </style>
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -85,10 +86,11 @@
                     <span class="sub">Divine Craftsmanship</span>
                 </div>
             </a>
+
             <nav>
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">All Products</a></li>
+                    <li><a href="products.html" class="active" style="color:var(--saffron);">All Products</a></li>
                     <li><a href="mandirs.html">Mandirs</a></li>
                     <li>
                         <div class="nav-dropdown">
@@ -107,19 +109,23 @@
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
+
             <div class="nav-actions">
                 <!-- <a href="search.html" class="nav-icon-btn" title="Search"><i class="fas fa-search"></i></a> -->
-                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist"><i class="fas fa-heart"></i><span
-                        class="badge" id="wishBadge">0</span></a>
+                <a href="#" class="nav-icon-btn" title="User"><i class="fas fa-user"></i></a>
+                <a href="wishlist.html" class="nav-icon-btn" title="Wishlist"><i class="fas fa-cart-plus"></i><span
+                        class="badge">0</span></a>
                 <a href="contact.html" class="btn-enquire-nav"><i class="fas fa-paper-plane"></i> Enquire Now</a>
                 <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
             </div>
         </div>
+
+        <!-- Mobile Nav -->
         <nav class="mobile-nav" id="mobileNav">
             <a href="index.html">🏠 Home</a>
-            <a href="products.html" class="active">📿 All Products</a>
+            <a href="products.html">📿 All Products</a>
             <a href="mandirs.html">🛕 Mandirs</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
