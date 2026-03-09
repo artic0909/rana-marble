@@ -618,29 +618,64 @@
     font-size: 1.1rem;
 }
 
-@media (max-width: 600px) {
+/* Force horizontal list view on mobile — NEVER stack to card */
+@media (max-width: 768px) {
     .order-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 6px;
     }
 
+    /* Wrap-based layout: image+details in row 1, button in row 2 */
     .order-body {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-wrap: wrap !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 12px !important;
     }
 
     .order-img {
-        width: 100%;
-        height: 200px;
+        width: 86px !important;
+        min-width: 86px !important;
+        height: 86px !important;
+        flex-shrink: 0 !important;
     }
 
+    .order-details {
+        flex: 1 !important;
+        min-width: 0 !important;
+        overflow: hidden;
+    }
+
+    .order-name {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .order-meta {
+        font-size: 0.78rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .order-price {
+        font-size: 0.95rem;
+    }
+
+    /* Button wraps to its own full-width row */
     .order-actions {
-        width: 100%;
+        width: 100% !important;
+        flex-basis: 100%;
     }
 
     .order-actions button {
-        width: 100%;
+        width: 100% !important;
+        padding: 10px !important;
+        font-size: 0.85rem !important;
+        text-align: center;
     }
 }
 
