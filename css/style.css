@@ -1092,6 +1092,7 @@ header {
 }
 
 .btn-add-list {
+  text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2104,4 +2105,136 @@ footer {
   .nav-icon-btn { width: 34px !important; height: 34px !important; font-size: 0.85rem !important; margin: 0 2px; }
   .hero { min-height: 38vh !important; }
   .product-name { font-size: 0.72rem !important; }
+}
+
+@media (max-width: 500px) {
+  .product-img-wrap {
+    aspect-ratio: 1 / 1 !important;
+  }
+  .product-info {
+    padding: 10px 8px !important;
+  }
+  .product-name {
+    margin-bottom: 4px !important;
+    font-size: 0.75rem !important;
+  }
+  .product-price {
+    font-size: 0.8rem !important;
+    margin-bottom: 8px !important;
+  }
+  .product-meta {
+    padding-top: 8px !important;
+  }
+  .product-meta[style*="margin-top"] {
+    margin-top: 6px !important;
+  }
+  .product-size {
+    font-size: 0.65rem !important;
+  }
+  .btn-add-list {
+  text-align: center;
+    font-size: 0.68rem !important;
+    padding: 6px 2px !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+  }
+  .product-badge {
+    font-size: 0.55rem !important;
+    padding: 3px 6px !important;
+    top: 8px !important;
+    left: 8px !important;
+  }
+}
+
+/* CSS for Testimonials Carousel */
+.testi-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+.testi-carousel::-webkit-scrollbar {
+  display: none;
+}
+.testi-carousel .testi-card {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+}
+
+@media (min-width: 768px) {
+  .testi-carousel .testi-card {
+    flex: 0 0 calc(50% - 10px);
+  }
+}
+@media (min-width: 1024px) {
+  .testi-carousel .testi-card {
+    flex: 0 0 calc(33.333% - 14px);
+  }
+}
+
+@media (max-width: 500px) {
+  /* Smaller, tighter grid */
+  .product-grid {
+    gap: 10px;
+  }
+  .product-img-wrap {
+    aspect-ratio: 1 / 1 !important;
+  }
+  .product-info {
+    padding: 8px 8px 10px 8px !important;
+  }
+  .product-name {
+    margin-bottom: 2px !important;
+    font-size: 0.7rem !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .product-price {
+    font-size: 0.75rem !important;
+    margin-bottom: 4px !important;
+  }
+  .product-meta {
+    padding-top: 6px !important;
+  }
+  .product-meta[style*="margin-top"] {
+    margin-top: 6px !important;
+  }
+  .product-size {
+    font-size: 0.6rem !important;
+    color: #999;
+  }
+  
+  /* Redesigned Add to Cart button for slim 1-line aspect */
+  .btn-add-list {
+    font-size: 0.6rem !important;
+    padding: 5px 0 !important;
+    letter-spacing: 0 !important;
+    white-space: nowrap !important;
+    width: 100% !important;
+    border-radius: 4px !important;
+    margin-top: 4px !important;
+    background: transparent !important;
+    color: var(--maroon) !important;
+    border: 1px solid var(--maroon) !important;
+    text-align: center !important;
+    display: block !important;
+  }
+  .btn-add-list::before {
+    content: '\f07a';
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    margin-right: 4px;
+  }
+  .btn-add-list:hover {
+    background: var(--maroon) !important;
+    color: white !important;
+  }
+  
+  /* Make the Add to Cart text completely change to an icon or just "Add" to save space if needed 
+     But since it's "white-space: nowrap", a smaller font should suffice. */
 }

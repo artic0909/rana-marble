@@ -61,3 +61,89 @@ document
       "opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s, border-color 0.3s";
     observer.observe(el);
   });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.getElementById("heroCarousel");
+  let isDown = false,
+    startX,
+    scrollLeft;
+  setInterval(() => {
+    if (!carousel || isDown) return;
+    let maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+    let scrollAmount = carousel.scrollLeft + carousel.clientWidth;
+    if (carousel.scrollLeft >= maxScrollLeft - 10) scrollAmount = 0;
+    carousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+  }, 4000);
+
+  carousel.addEventListener("mousedown", (e) => {
+    isDown = true;
+    startX = e.pageX - carousel.offsetLeft;
+    scrollLeft = carousel.scrollLeft;
+  });
+  carousel.addEventListener("mouseleave", () => {
+    isDown = false;
+  });
+  carousel.addEventListener("mouseup", () => {
+    isDown = false;
+  });
+  carousel.addEventListener("mousemove", (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const walk = (e.pageX - carousel.offsetLeft - startX) * 2;
+    carousel.scrollLeft = scrollLeft - walk;
+  });
+  carousel.addEventListener(
+    "touchstart",
+    () => {
+      isDown = true;
+    },
+    { passive: true },
+  );
+  carousel.addEventListener("touchend", () => {
+    isDown = false;
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const testiCarousel = document.getElementById("testiCarousel");
+  if (testiCarousel) {
+    let isTDown = false,
+      startX_T,
+      scrollLeft_T;
+    setInterval(() => {
+      if (!testiCarousel || isTDown) return;
+      let maxScrollLeft = testiCarousel.scrollWidth - testiCarousel.clientWidth;
+      let scrollAmount = testiCarousel.scrollLeft + testiCarousel.clientWidth;
+      if (testiCarousel.scrollLeft >= maxScrollLeft - 10) scrollAmount = 0;
+      testiCarousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    }, 5000);
+
+    testiCarousel.addEventListener("mousedown", (e) => {
+      isTDown = true;
+      startX_T = e.pageX - testiCarousel.offsetLeft;
+      scrollLeft_T = testiCarousel.scrollLeft;
+    });
+    testiCarousel.addEventListener("mouseleave", () => {
+      isTDown = false;
+    });
+    testiCarousel.addEventListener("mouseup", () => {
+      isTDown = false;
+    });
+    testiCarousel.addEventListener("mousemove", (e) => {
+      if (!isTDown) return;
+      e.preventDefault();
+      const walk = (e.pageX - testiCarousel.offsetLeft - startX_T) * 2;
+      testiCarousel.scrollLeft = scrollLeft_T - walk;
+    });
+    testiCarousel.addEventListener(
+      "touchstart",
+      () => {
+        isTDown = true;
+      },
+      { passive: true },
+    );
+    testiCarousel.addEventListener("touchend", () => {
+      isTDown = false;
+    });
+  }
+});
