@@ -1,17 +1,4 @@
-/* ─── Mobile Nav ─── */
-function toggleMobileNav() {
-  document.getElementById("mobileNav").classList.toggle("open");
-}
 
-/* ─── Scroll Top ─── */
-const scrollTopBtn = document.getElementById("scrollTop");
-window.addEventListener("scroll", () => {
-  scrollTopBtn.classList.toggle("visible", window.scrollY > 400);
-});
-scrollTopBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
 
 /* ─── Filter Group Toggle ─── */
 function toggleGroup(id) {
@@ -253,22 +240,10 @@ function closeMobileFilter() {
   document.body.style.overflow = "";
 }
 
-/* ─── Intersection Observer: fade in cards ─── */
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((el) => {
-      if (el.isIntersecting) {
-        el.target.style.opacity = "1";
-        el.target.style.transform = "translateY(0)";
-      }
-    });
-  },
-  { threshold: 0.08 },
-);
 
 document.querySelectorAll(".product-card").forEach((el, i) => {
   el.style.opacity = "0";
   el.style.transform = "translateY(20px)";
   el.style.transition = `opacity 0.5s ${i * 0.06}s ease, transform 0.5s ${i * 0.06}s ease, box-shadow 0.3s, border-color 0.3s`;
-  observer.observe(el);
+  prodObserver.observe(el);
 });
