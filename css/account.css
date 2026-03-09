@@ -227,7 +227,7 @@
     font-size: 1.1rem;
 }
 
-/* Responsive */
+/* Force List View on ALL screen sizes including mobile */
 @media (max-width: 768px) {
     .wishlist-hero {
         padding: 120px 20px 20px;
@@ -243,35 +243,68 @@
         align-items: flex-start;
     }
 
+    /* Keep horizontal list row — never let it go card */
     .product-card.wishlist-card.list-view {
-        flex-direction: column;
-        padding: 0 0 20px 0;
+        flex-direction: row !important;
+        padding: 12px !important;
+        align-items: center !important;
         position: relative;
+        gap: 12px;
     }
 
     .wishlist-card.list-view .product-img-wrap {
-        width: 100%;
-        height: 250px;
-        margin-right: 0;
-        margin-bottom: 20px;
-        border-radius: 12px 12px 0 0;
+        width: 90px !important;
+        min-width: 90px !important;
+        height: 90px !important;
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+        border-radius: 8px !important;
+        flex-shrink: 0;
     }
 
     .wishlist-card.list-view .product-info {
-        padding: 0 20px;
-        text-align: center;
-        width: 100%;
+        flex: 1;
+        padding: 0 !important;
+        text-align: left !important;
+        width: auto !important;
+        overflow: hidden;
+        min-width: 0;
+    }
+
+    .wishlist-card.list-view .product-name {
+        font-size: 0.9rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .wishlist-card.list-view .product-cat {
+        font-size: 0.65rem;
     }
 
     .wishlist-card.list-view .product-meta {
-        justify-content: center;
+        justify-content: flex-start !important;
+        flex-direction: column;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .wishlist-card.list-view .btn-enquire,
+    .wishlist-card.list-view .btn-add-list {
+        font-size: 0.7rem;
+        padding: 6px 12px;
+        width: 100%;
+        text-align: center;
     }
 
     .wishlist-card.list-view .btn-remove {
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 8px;
+        right: 8px;
         margin-left: 0;
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
         background: rgba(255, 255, 255, 0.9);
     }
 }
