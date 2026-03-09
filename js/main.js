@@ -191,3 +191,47 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  const bannerCarousel = document.getElementById("bannerCarousel");
+  if (bannerCarousel) {
+    let isBDown = false,
+      startX_B,
+      scrollLeft_B;
+    setInterval(() => {
+      if (!bannerCarousel || isBDown) return;
+      let maxScrollLeft = bannerCarousel.scrollWidth - bannerCarousel.clientWidth;
+      let scrollAmount = bannerCarousel.scrollLeft + bannerCarousel.clientWidth;
+      if (bannerCarousel.scrollLeft >= maxScrollLeft - 10) scrollAmount = 0;
+      bannerCarousel.scrollTo({ left: scrollAmount, behavior: "smooth" });
+    }, 4000);
+
+    bannerCarousel.addEventListener("mousedown", (e) => {
+      isBDown = true;
+      startX_B = e.pageX - bannerCarousel.offsetLeft;
+      scrollLeft_B = bannerCarousel.scrollLeft;
+    });
+    bannerCarousel.addEventListener("mouseleave", () => {
+      isBDown = false;
+    });
+    bannerCarousel.addEventListener("mouseup", () => {
+      isBDown = false;
+    });
+    bannerCarousel.addEventListener("mousemove", (e) => {
+      if (!isBDown) return;
+      e.preventDefault();
+      const walk = (e.pageX - bannerCarousel.offsetLeft - startX_B) * 2;
+      bannerCarousel.scrollLeft = scrollLeft_B - walk;
+    });
+    bannerCarousel.addEventListener(
+      "touchstart",
+      () => {
+        isBDown = true;
+      },
+      { passive: true },
+    );
+    bannerCarousel.addEventListener("touchend", () => {
+      isBDown = false;
+    });
+  }
+});

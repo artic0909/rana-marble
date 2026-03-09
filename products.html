@@ -146,16 +146,45 @@
         </nav>
     </header>
 
-    <!-- Page Banner -->
-    <div class="page-banner">
-        <div class="breadcrumb">
-            <a href="index.html">Home</a>
-            <i class="fas fa-chevron-right"></i>
-            <span>All Products</span>
+    <!-- Page Banner Carousel -->
+    <section class="hero" id="heroSection"
+        style="position: relative; min-height: 46vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #1a0a00;">
+        <div id="heroCarousel" class="hero-bg-carousel"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
+            <style>
+                .hero-bg-carousel::-webkit-scrollbar {
+                    display: none;
+                }
+            </style>
+            <!-- Slides -->
+            <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
+                <img src="./img/hero.png" alt="Slide 1"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+            </div>
+            <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
+                <img src="./img/hero.png" alt="Slide 2"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+            </div>
+            <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
+                <img src="./img/hero.png" alt="Slide 3"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+            </div>
         </div>
-        <h1>Our Divine <span>Collection</span></h1>
-        <p>Handcrafted sacred marble mandirs & idols — each a labour of devotion</p>
-    </div>
+
+        <div class="hero-mandala" style="pointer-events: none;"></div>
+        <div class="hero-glow" style="pointer-events: none;"></div>
+        <div class="hero-particles" style="pointer-events: none;"></div>
+
+        <div class="hero-content"
+            style="position: relative; z-index: 10; pointer-events: none; margin: 0 auto; text-align: center; justify-content: center; width: 100%; display: flex; flex-direction: column;">
+            <div class="hero-text" style="pointer-events: auto; padding: 20px;">
+               
+                <h1 class="hero-title">
+                    Sacred <span class="accent">Marble Mandirs</span><br />Crafted with Devotion
+                </h1>
+            </div>
+        </div>
+    </section>
 
     <!-- Mobile Filter Overlay -->
     <div class="filter-overlay" id="filterOverlay" onclick="closeMobileFilter()"></div>
@@ -884,6 +913,7 @@
         </div>
     </footer>
 
+    <script src="./js/main.js"></script>
     <script src="./js/product.js"></script>
 
 </body>
