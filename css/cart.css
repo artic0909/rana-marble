@@ -1,9 +1,9 @@
-
 /* ─── CART PAGE STYLES ─── */
 .cart-section {
     padding: 60px 20px;
     background: var(--bg-color, #FAFAFA);
 }
+
 .cart-layout {
     display: flex;
     gap: 30px;
@@ -16,15 +16,17 @@
     flex: 1;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid var(--border-color);
     padding: 24px;
 }
+
 .cart-header {
     border-bottom: 2px solid var(--border-color);
     padding-bottom: 15px;
     margin-bottom: 20px;
 }
+
 .cart-header h2 {
     font-family: "Cinzel", serif;
     color: var(--maroon);
@@ -41,6 +43,7 @@
     position: relative;
     gap: 20px;
 }
+
 .cart-img {
     width: 100px;
     height: 100px;
@@ -48,9 +51,11 @@
     border-radius: 8px;
     border: 1px solid var(--border-color);
 }
+
 .cart-details {
     flex: 1;
 }
+
 .cart-cat {
     font-size: 0.8rem;
     color: var(--gold);
@@ -58,17 +63,20 @@
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
+
 .cart-name {
     font-family: "Cinzel", serif;
     font-size: 1.15rem;
     color: var(--text-dark);
     margin: 0 0 8px 0;
 }
+
 .cart-meta {
     font-size: 0.85rem;
     color: #666;
     margin: 2px 0;
 }
+
 .cart-price-qty {
     display: flex;
     flex-direction: column;
@@ -76,6 +84,7 @@
     gap: 12px;
     min-width: 120px;
 }
+
 .cart-price {
     font-weight: 700;
     color: var(--maroon);
@@ -90,6 +99,7 @@
     border-radius: 4px;
     overflow: hidden;
 }
+
 .qty-control button {
     background: #f5f5f5;
     border: none;
@@ -97,9 +107,11 @@
     cursor: pointer;
     color: #444;
 }
+
 .qty-control button:hover {
     background: #e0e0e0;
 }
+
 .qty-control input {
     width: 40px;
     text-align: center;
@@ -107,6 +119,7 @@
     font-weight: 600;
     color: var(--text-dark);
 }
+
 .qty-control input:focus {
     outline: none;
 }
@@ -121,6 +134,7 @@
     opacity: 0.7;
     transition: 0.3s;
 }
+
 .cart-remove:hover {
     opacity: 1;
     transform: scale(1.1);
@@ -131,6 +145,7 @@
     display: flex;
     justify-content: flex-start;
 }
+
 .btn-secondary {
     display: inline-flex;
     align-items: center;
@@ -144,6 +159,7 @@
     font-weight: 600;
     transition: 0.3s;
 }
+
 .btn-secondary:hover {
     background: var(--gold);
     color: white;
@@ -154,12 +170,13 @@
     width: 350px;
     background: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     border: 1px solid var(--border-color);
     padding: 24px;
     position: sticky;
     top: 100px;
 }
+
 .cart-summary h3 {
     font-family: "Cinzel", serif;
     color: var(--maroon);
@@ -168,6 +185,7 @@
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
 }
+
 .summary-row {
     display: flex;
     justify-content: space-between;
@@ -175,6 +193,7 @@
     font-size: 0.95rem;
     color: #555;
 }
+
 .summary-row.total {
     font-weight: 700;
     color: var(--maroon);
@@ -188,6 +207,7 @@
     display: flex;
     margin-bottom: 25px;
 }
+
 .promo-code input {
     flex: 1;
     padding: 10px;
@@ -195,10 +215,12 @@
     border-radius: 4px 0 0 4px;
     font-size: 0.9rem;
 }
+
 .promo-code input:focus {
     outline: none;
     border-color: var(--gold);
 }
+
 .promo-code button {
     background: var(--text-dark);
     color: white;
@@ -209,6 +231,7 @@
     font-weight: 600;
     transition: 0.3s;
 }
+
 .promo-code button:hover {
     background: var(--maroon);
 }
@@ -230,6 +253,7 @@
     transition: filter 0.3s;
     box-shadow: 0 4px 10px rgba(107, 26, 26, 0.2);
 }
+
 .btn-checkout:hover {
     filter: brightness(1.1);
     color: white;
@@ -242,6 +266,7 @@
     color: #777;
     line-height: 1.5;
 }
+
 .secure-checkout i {
     color: #28a745;
     margin-right: 5px;
@@ -252,39 +277,100 @@
     .cart-layout {
         flex-direction: column;
     }
+
     .cart-summary {
         width: 100%;
         position: static;
     }
 }
+
+/* Force horizontal list view on mobile — NEVER stack to card */
 @media (max-width: 600px) {
     .cart-section {
-        padding: 30px 15px;
+        padding: 30px 12px;
     }
+
     .cart-items {
-        padding: 15px;
+        padding: 12px;
     }
+
+    /* Wrap layout: image+details in row 1, price+qty in row 2 */
     .cart-item {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        padding: 14px 0 !important;
         position: relative;
     }
+
     .cart-img {
-        width: 100%;
-        height: 150px;
+        width: 80px !important;
+        min-width: 80px !important;
+        height: 80px !important;
+        flex-shrink: 0 !important;
+        border-radius: 8px !important;
     }
+
+    .cart-details {
+        flex: 1 !important;
+        min-width: 0 !important;
+        overflow: hidden;
+    }
+
+    .cart-cat {
+        font-size: 0.65rem;
+    }
+
+    .cart-name {
+        font-size: 0.84rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 3px;
+    }
+
+    .cart-meta {
+        font-size: 0.72rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* Price + qty: wraps to full-width row 2 below image+details */
     .cart-price-qty {
-        width: 100%;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
+        flex-basis: 100% !important;
+        width: 100% !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        min-width: 0 !important;
+        gap: 10px !important;
+        padding: 0 !important;
     }
+
+    .cart-price {
+        font-size: 0.88rem;
+        white-space: nowrap;
+    }
+
+    .qty-control input {
+        width: 24px;
+        font-size: 0.8rem;
+    }
+
+    .qty-control button {
+        padding: 4px 7px;
+    }
+
+    /* Remove button top-right overlay */
     .cart-remove {
-        position: absolute;
-        top: 20px;
-        right: 0;
-        background: rgba(255,255,255,0.8);
-        border-radius: 50%;
-        padding: 8px;
+        position: absolute !important;
+        top: 10px !important;
+        right: 0 !important;
+        background: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 50% !important;
+        padding: 5px 6px !important;
+        font-size: 0.8rem;
     }
 }
