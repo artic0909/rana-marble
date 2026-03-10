@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login – Rana Marble | Divine Marble</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        /* ═══════════ AUTH PAGE ═══════════ */
+        .auth-section {
+            min-height: calc(100vh - 180px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(160deg, #fdf6e3 0%, #f5eac8 60%, #fdf6e3 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Decorative background circles */
+        .auth-section::before {
+            content: "";
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(201, 168, 76, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .auth-section::after {
+            content: "";
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 360px;
+            height: 360px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(212, 114, 42, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .auth-card {
+            background: #fff;
+            border-radius: 12px;
+            border: 1px solid rgba(201, 168, 76, 0.3);
+            box-shadow:
+                0 20px 60px rgba(107, 26, 26, 0.08),
+                0 4px 20px rgba(201, 168, 76, 0.1);
+            padding: 48px 44px;
+            width: 100%;
+            max-width: 460px;
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 0.7s ease both;
+        }
+
+        .auth-top-ornament {
+            text-align: center;
+            margin-bottom: 28px;
+        }
+
+        .auth-om {
+            width: 52px;
+            height: 52px;
+            background: linear-gradient(135deg, var(--saffron), var(--gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.4rem;
+            margin: 0 auto 14px;
+            box-shadow: 0 4px 18px rgba(212, 114, 42, 0.35);
+        }
+
+        .auth-subtitle-tag {
+            font-family: "Cinzel", serif;
+            font-size: 0.68rem;
+            letter-spacing: 0.22em;
+            color: var(--saffron);
+            text-transform: uppercase;
+            display: block;
+        }
+
+        .auth-title {
+            font-family: "Cinzel Decorative", serif;
+            font-size: 1.7rem;
+            font-weight: 700;
+            color: var(--maroon);
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .auth-tagline {
+            font-family: "Crimson Pro", serif;
+            font-style: italic;
+            color: var(--text-light);
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 32px;
+        }
+
+        /* Gold divider line */
+        .auth-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-gold), transparent);
+            margin-bottom: 28px;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .auth-form .form-group label {
+            display: block;
+            font-family: "Cinzel", serif;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--text-mid);
+            margin-bottom: 8px;
+            letter-spacing: 0.06em;
+        }
+
+        .input-wrap {
+            position: relative;
+        }
+
+        .input-wrap>i {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gold);
+            font-size: 0.9rem;
+            pointer-events: none;
+        }
+
+        .auth-form input[type="email"],
+        .auth-form input[type="password"],
+        .auth-form input[type="text"] {
+            width: 100%;
+            padding: 13px 14px 13px 42px;
+            border: 1.5px solid rgba(201, 168, 76, 0.35);
+            border-radius: 6px;
+            font-family: "Crimson Pro", serif;
+            font-size: 1rem;
+            color: var(--text-dark);
+            background: #fffdf7;
+            transition: all 0.25s;
+            outline: none;
+        }
+
+        .auth-form input:focus {
+            border-color: var(--saffron);
+            box-shadow: 0 0 0 3px rgba(212, 114, 42, 0.1);
+            background: #fff;
+        }
+
+        .form-row-end {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: "Crimson Pro", serif;
+            font-size: 0.95rem;
+            color: var(--text-mid);
+            cursor: pointer;
+        }
+
+        .remember-me input[type="checkbox"] {
+            accent-color: var(--saffron);
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        .forgot-link {
+            font-family: "Cinzel", serif;
+            font-size: 0.7rem;
+            color: var(--saffron);
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            transition: color 0.2s;
+        }
+
+        .forgot-link:hover {
+            color: var(--maroon);
+        }
+
+        /* Eye toggle button */
+        .toggle-pw {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            padding: 0;
+            line-height: 1;
+            transition: color 0.2s;
+        }
+
+        .toggle-pw:hover {
+            color: var(--saffron);
+        }
+
+        .btn-auth {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--saffron), var(--maroon));
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-family: "Cinzel", serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            cursor: pointer;
+            transition: all 0.25s;
+            box-shadow: 0 6px 20px rgba(212, 114, 42, 0.35);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 28px rgba(212, 114, 42, 0.5);
+        }
+
+        .auth-or {
+            text-align: center;
+            margin: 24px 0;
+            position: relative;
+            font-family: "Cinzel", serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.14em;
+            color: var(--text-light);
+        }
+
+        .auth-or::before,
+        .auth-or::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 38%;
+            height: 1px;
+            background: rgba(201, 168, 76, 0.3);
+        }
+
+        .auth-or::before {
+            left: 0;
+        }
+
+        .auth-or::after {
+            right: 0;
+        }
+
+        .social-logins {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .btn-social {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 11px 14px;
+            border: 1.5px solid rgba(201, 168, 76, 0.3);
+            border-radius: 6px;
+            background: #fffdf7;
+            font-family: "Crimson Pro", serif;
+            font-size: 0.95rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-social:hover {
+            border-color: var(--gold);
+            background: rgba(201, 168, 76, 0.06);
+        }
+
+        .btn-social .fab.fa-google {
+            color: #EA4335;
+        }
+
+        .btn-social .fab.fa-facebook-f {
+            color: #1877F2;
+        }
+
+        .auth-switch {
+            text-align: center;
+            font-family: "Crimson Pro", serif;
+            font-size: 1rem;
+            color: var(--text-mid);
+        }
+
+        .auth-switch a {
+            color: var(--saffron);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .auth-switch a:hover {
+            color: var(--maroon);
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 520px) {
+            .auth-card {
+                padding: 36px 24px;
+            }
+
+            .auth-title {
+                font-size: 1.35rem;
+            }
+
+            .social-logins {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Announcement Bar -->
+    <div class="announce-bar">
+        <div class="announce-track">
+            <span>🪔 Handcrafted with Devotion</span>
+            <span></span>
+            <span>Free Delivery on Orders Above ₹25,000</span>
+            <span></span>
+            <span>Custom Size &amp; Design Available</span>
+            <span>✦</span>
+            <span>Premium White Makrana Marble</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>🪔 Handcrafted with Devotion</span>
+            <span></span>
+            <span>Free Delivery on Orders Above ₹25,000</span>
+            <span></span>
+            <span>Custom Size &amp; Design Available</span>
+            <span>✦</span>
+            <span>Premium White Makrana Marble</span>
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+        </div>
+    </div>
+
+    <!-- Topbar -->
+    <div class="topbar">
+        <a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a>
+        <a href="mailto:info@ranamarble.com"><i class="fas fa-envelope"></i> info@ranamarble.com</a>
+        <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-inner">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fas fa-om"></i></div>
+                <div class="logo-text">
+                    <span class="brand">Rana Marble</span>
+                    <br>
+                    <span class="sub">Divine Craftsmanship</span>
+                </div>
+            </a>
+
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">All Products</a></li>
+                    <li>
+                        <div class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="mandirs.html">Home Mandirs</a></li>
+                                <li><a href="idols.html">Marble Idols</a></li>
+                                <li><a href="pillars.html">Pillars &amp; Columns</a></li>
+                                <li><a href="wall-panels.html">Jaali Panels</a></li>
+                                <li><a href="fountains.html">Marble Fountains</a></li>
+                                <li><a href="custom.html">Custom Orders</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li>
+                        <div class="nav-dropdown">
+                            <a href="#" class="dropdown-toggle">Profile <i class="fas fa-chevron-down"></i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="profile.html">My Profile</a></li>
+                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="orders.html">Orders</a></li>
+                                <li><a href="cart.html">Cart Items</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="#" class="nav-icon-btn" title="User"><i class="fas fa-user"></i></a>
+                <a href="cart.html" class="nav-icon-btn" title="Cart"><i class="fas fa-cart-plus"></i><span
+                        class="badge">0</span></a>
+                <a href="contact.html" class="btn-enquire-nav"><i class="fas fa-paper-plane"></i> Enquire Now</a>
+                <button class="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Nav -->
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="index.html">🏠 Home</a>
+            <a href="products.html">📿 All Products</a>
+            <a href="mandirs.html">🛕 Mandirs</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    📁 Categories <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="mandirs.html">Home Mandirs</a>
+                    <a href="idols.html">Marble Idols</a>
+                    <a href="pillars.html">Pillars &amp; Columns</a>
+                    <a href="wall-panels.html">Jaali Panels</a>
+                    <a href="fountains.html">Marble Fountains</a>
+                    <a href="custom.html">Custom Orders</a>
+                </div>
+            </div>
+            <a href="about.html">🙏 About Us</a>
+            <a href="wishlist.html">❤️ Wishlist</a>
+            <a href="contact.html">📞 Contact</a>
+        </nav>
+    </header>
+
+    <!-- ═══════════════════ LOGIN SECTION ═══════════════════ -->
+    <section class="auth-section">
+        <div class="auth-card">
+
+            <!-- Top ornament -->
+            <div class="auth-top-ornament">
+                <div class="auth-om"><i class="fas fa-om"></i></div>
+                <span class="auth-subtitle-tag">Sacred Access</span>
+            </div>
+
+            <h1 class="auth-title">Welcome Back</h1>
+            <p class="auth-tagline">Sign in to your divine sanctuary</p>
+
+            <div class="auth-divider"></div>
+
+            <form class="auth-form" action="#" method="post">
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <div class="input-wrap">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="you@example.com" required />
+                    </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-wrap">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" name="password" placeholder="Enter your password" required
+                            style="padding-right:42px" />
+                        <button type="button" class="toggle-pw" onclick="togglePassword('password', this)"
+                            title="Show/Hide Password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Remember & Forgot -->
+                <div class="form-row-end">
+                    <label class="remember-me">
+                        <input type="checkbox" name="remember"> Remember me
+                    </label>
+                    <a href="forgetpassword.html" class="forgot-link">Forgot Password?</a>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-auth">
+                    <i class="fas fa-sign-in-alt"></i> Sign In
+                </button>
+            </form>
+
+            <p class="auth-switch" style="margin-top: 15px;">
+                Don't have an account? <a href="register.html">Create one</a>
+            </p>
+        </div>
+    </section>
+
+    <div class="ornament-divider" style="margin: 0; text-align: center; color: var(--saffron);">🕉</div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <!-- Brand -->
+            <div class="footer-brand">
+                <div class="logo">
+                    <div class="logo-icon" style="background:linear-gradient(135deg,var(--saffron),var(--maroon));">
+                        <i class="fas fa-om"></i>
+                    </div>
+                    <div class="logo-text">
+                        <span class="brand">Rana Marble</span>
+                        <span class="sub">Divine Craftsmanship</span>
+                    </div>
+                </div>
+                <p class="footer-about">
+                    For over 18 years, Rana Marble has been crafting sacred marble mandirs and spiritual décor
+                    with devotion and artistry from the heart of Rajasthan. Every piece is a blessing for your home.
+                </p>
+                <div class="footer-social">
+                    <a href="#" class="social-btn" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-btn" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-btn" title="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-btn" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="https://wa.me/919876543210" class="social-btn" title="WhatsApp" target="_blank"><i
+                            class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> Home</a></li>
+                    <li><a href="products.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> All Products</a>
+                    </li>
+                    <li><a href="mandirs.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> Mandirs</a></li>
+                    <li><a href="idols.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> Marble Idols</a>
+                    </li>
+                    <li><a href="custom.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> Custom Orders</a>
+                    </li>
+                    <li><a href="about.html"><i class="fas fa-chevron-right"
+                                style="font-size:0.7rem;color:var(--saffron);margin-right:6px;"></i> About Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-col">
+                <h4>Categories</h4>
+                <ul>
+                    <li><a href="#">Home Mandirs</a></li>
+                    <li><a href="#">Temple Mandirs</a></li>
+                    <li><a href="#">Gold Painted</a></li>
+                    <li><a href="#">Marble Idols</a></li>
+                    <li><a href="#">Jaali Panels</a></li>
+                    <li><a href="#">Pillars &amp; Columns</a></li>
+                    <li><a href="#">Marble Fountains</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-col">
+                <h4>Contact Us</h4>
+                <div class="footer-contact">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Near Makrana Marble Mandi, Makrana, Nagaur, Rajasthan – 341505</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone-alt"></i>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/919876543210" target="_blank">WhatsApp Now</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@ranamarble.com">info@ranamarble.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon – Sat: 9AM – 7PM IST</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 Rana Marble. All Rights Reserved. &nbsp;|&nbsp; <a href="privacy.html">Privacy Policy</a>
+                &nbsp;|&nbsp; <a href="terms.html">Terms of Use</a></span>
+            <span>Made with 🙏 in Rajasthan, India</span>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/919876543210?text=Namaste! I want to enquire about marble mandirs." class="float-wa"
+        target="_blank" title="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Scroll to Top -->
+    <a href="#" class="scroll-top" id="scrollTop" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <script src="./js/main.js"></script>
+    <script>
+        function togglePassword(id, btn) {
+            const input = document.getElementById(id);
+            const icon = btn.querySelector('i');
+            if (input.type === 'password') {
+                input.type = 'text';
+                icon.classList.replace('fa-eye', 'fa-eye-slash');
+            } else {
+                input.type = 'password';
+                icon.classList.replace('fa-eye-slash', 'fa-eye');
+            }
+        }
+    </script>
+</body>
+
+</html>
