@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Profile - Rana Marble | Divine Marble</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap"
+        rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/account.css">
-    
+
 </head>
+
 <body>
-<!-- Announcement Bar -->
+    <!-- Announcement Bar -->
     <div class="announce-bar">
         <div class="announce-track">
             <span>🪔 Handcrafted with Devotion</span>
@@ -35,8 +39,8 @@
         </div>
     </div>
 
-    
-<!-- Topbar -->
+
+    <!-- Topbar -->
     <div class="topbar">
         <a href="tel:+919876543210"><i class="fas fa-phone-alt"></i> +91 98765 43210</a>
         <a href="/cdn-cgi/l/email-protection#523b3c343d1220333c333f3320303e37377c313d3f"><i class="fas fa-envelope"></i>
@@ -45,8 +49,8 @@
         <a href="#"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
     </div>
 
-    
-<header>
+
+    <header>
         <div class="nav-inner">
             <a href="index.html" class="logo">
                 <div class="logo-icon"><i class="fas fa-om"></i></div>
@@ -104,12 +108,11 @@
 
         <!-- Mobile Nav -->
         <nav class="mobile-nav" id="mobileNav">
-            <a href="index.html">🏠 Home</a>
-            <a href="products.html">📿 All Products</a>
-            <a href="mandirs.html">🛕 Mandirs</a>
+            <a href="index.html">Home</a>
+            <a href="products.html">All Products</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
-                    📁 Categories <i class="fas fa-chevron-down"></i>
+                    Categories <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="mobile-dropdown-content">
                     <a href="mandirs.html">Home Mandirs</a>
@@ -120,26 +123,28 @@
                     <a href="custom.html">Custom Orders</a>
                 </div>
             </div>
-            <a href="about.html">🙏 About Us</a>
-            <a href="wishlist.html">❤️ Wishlist</a>
-            <a href="contact.html">📞 Contact</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    Profile <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="profile.html">My Profile</a>
+                    <a href="wishlist.html">Wishlist</a>
+                    <a href="orders.html">Orders</a>
+                    <a href="cart.html">Cart Items</a>
+                </div>
+            </div>
         </nav>
     </header>
-
-    <!-- HERO -->
-    <section class="wishlist-hero">
-        <div class="container">
-            <h1 class="wishlist-hero-title">Your Sacred Profile</h1>
-            <p class="wishlist-hero-sub">Manage your personal details and account settings.</p>
-        </div>
-    </section>
 
     <!-- CONTENT -->
     <section class="wishlist-section">
         <div class="container">
             <div class="profile-layout full-width-layout">
                 <!-- Sidebar -->
-                
+
 
                 <!-- Main Content -->
                 <div class="profile-content">
@@ -184,8 +189,8 @@
                         </form>
                     </div> <!-- End tab-personal -->
 
-                    
-<!-- ACCOUNT SETTINGS TAB -->
+
+                    <!-- ACCOUNT SETTINGS TAB -->
                     <div id="tab-account" class="tab-pane active" style="margin-top:40px;">
                         <h2 class="tab-title">Account Settings</h2>
                         <form class="profile-form" onsubmit="event.preventDefault(); alert('Password Updated!');">
@@ -212,7 +217,7 @@
                         </form>
                     </div> <!-- End tab-account -->
 
-                
+
                 </div> <!-- End profile-content -->
             </div> <!-- End profile-layout -->
         </div>
@@ -220,7 +225,7 @@
 
     <div class="ornament-divider" style="margin: 0 0 40px; text-align: center; color: var(--saffron);">🕉</div>
 
-<footer>
+    <footer>
         <div class="footer-grid">
             <!-- Brand -->
             <div class="footer-brand">
@@ -336,5 +341,5 @@
 
     <script src="./js/main.js"></script>
 </body>
-</html>
 
+</html>

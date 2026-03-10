@@ -110,12 +110,11 @@
 
         <!-- Mobile Nav -->
         <nav class="mobile-nav" id="mobileNav">
-            <a href="index.html">🏠 Home</a>
-            <a href="products.html">📿 All Products</a>
-            <a href="mandirs.html">🛕 Mandirs</a>
+            <a href="index.html">Home</a>
+            <a href="products.html">All Products</a>
             <div class="mobile-dropdown">
                 <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
-                    📁 Categories <i class="fas fa-chevron-down"></i>
+                    Categories <i class="fas fa-chevron-down"></i>
                 </button>
                 <div class="mobile-dropdown-content">
                     <a href="mandirs.html">Home Mandirs</a>
@@ -126,25 +125,44 @@
                     <a href="custom.html">Custom Orders</a>
                 </div>
             </div>
-            <a href="about.html">🙏 About Us</a>
-            <a href="wishlist.html">❤️ Wishlist</a>
-            <a href="contact.html">📞 Contact</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-dropdown">
+                <button class="mobile-dropdown-btn" onclick="this.parentElement.classList.toggle('active')">
+                    Profile <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="mobile-dropdown-content">
+                    <a href="profile.html">My Profile</a>
+                    <a href="wishlist.html">Wishlist</a>
+                    <a href="orders.html">Orders</a>
+                    <a href="cart.html">Cart Items</a>
+                </div>
+            </div>
         </nav>
     </header>
 
     <!-- ═══════════════════════════════════ HERO ═══════════════════════════════════ -->
-    <section class="hero" id="heroSection" style="position: relative; min-height: 46vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #1a0a00;">
-        <div id="heroCarousel" class="hero-bg-carousel" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
-            <style>.hero-bg-carousel::-webkit-scrollbar { display: none; }</style>
+    <section class="hero" id="heroSection"
+        style="position: relative; min-height: 46vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background: #1a0a00;">
+        <div id="heroCarousel" class="hero-bg-carousel"
+            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -ms-overflow-style: none; scroll-behavior: smooth;">
+            <style>
+                .hero-bg-carousel::-webkit-scrollbar {
+                    display: none;
+                }
+            </style>
             <!-- Slides -->
             <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
-                <img src="./img/hero.png" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+                <img src="./img/hero.png" alt="Slide 1"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
             </div>
             <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
-                <img src="./img/hero.png" alt="Slide 2" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+                <img src="./img/hero.png" alt="Slide 2"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
             </div>
             <div class="hero-slide" style="flex: 0 0 100%; height: 100%; scroll-snap-align: start; position: relative;">
-                <img src="./img/hero.png" alt="Slide 3" style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
+                <img src="./img/hero.png" alt="Slide 3"
+                    style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6);" />
             </div>
         </div>
 
@@ -152,7 +170,8 @@
         <div class="hero-glow" style="pointer-events: none;"></div>
         <div class="hero-particles" style="pointer-events: none;"></div>
 
-        <div class="hero-content" style="position: relative; z-index: 10; pointer-events: none; margin: 0 auto; text-align: center; justify-content: center; width: 100%; display: flex; flex-direction: column;">
+        <div class="hero-content"
+            style="position: relative; z-index: 10; pointer-events: none; margin: 0 auto; text-align: center; justify-content: center; width: 100%; display: flex; flex-direction: column;">
             <div class="hero-text" style="pointer-events: auto; padding: 20px;">
                 <div class="hero-tag">
                     <i class="fas fa-star-of-life fa-spin" style="animation-duration:4s;"></i>
@@ -227,10 +246,12 @@
                     <div class="product-info">
                         <div class="product-cat">Home Mandirs</div>
                         <h3 class="product-name">Royal Tri-Shikhara Mandir</h3>
-                        <div class="product-price" style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">Price: ₹ 1,50,000</div>
+                        <div class="product-price"
+                            style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">
+                            Price: ₹ 1,50,000</div>
                         <div class="product-meta">
                             <div class="product-size"><i class="fas fa-ruler-combined"></i> 3 × 2 ft</div>
-                            
+
                         </div>
                         <div class="product-meta" style="margin-top: 10px;">
                             <a href="product-detail.html" class="btn-add-list" style="width: 100%;">ADD TO CART</a>
@@ -260,10 +281,12 @@
                     <div class="product-info">
                         <div class="product-cat">Gold Painted Mandirs</div>
                         <h3 class="product-name">Om Suraj Gold-Painted Mandir</h3>
-                        <div class="product-price" style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">Price: ₹ 1,50,000</div>
+                        <div class="product-price"
+                            style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">
+                            Price: ₹ 1,50,000</div>
                         <div class="product-meta">
                             <div class="product-size"><i class="fas fa-ruler-combined"></i> 3.5 × 2.5 ft</div>
-                            
+
                         </div>
                         <div class="product-meta" style="margin-top: 10px;">
                             <a href="product-detail.html" class="btn-add-list" style="width: 100%;">ADD TO CART</a>
@@ -293,10 +316,12 @@
                     <div class="product-info">
                         <div class="product-cat">Open Style Mandirs</div>
                         <h3 class="product-name">Peacock Arched Open Mandir</h3>
-                        <div class="product-price" style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">Price: ₹ 1,50,000</div>
+                        <div class="product-price"
+                            style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">
+                            Price: ₹ 1,50,000</div>
                         <div class="product-meta">
                             <div class="product-size"><i class="fas fa-ruler-combined"></i> 4.5 × 3 ft</div>
-                            
+
                         </div>
                         <div class="product-meta" style="margin-top: 10px;">
                             <a href="product-detail.html" class="btn-add-list" style="width: 100%;">ADD TO CART</a>
@@ -326,10 +351,12 @@
                     <div class="product-info">
                         <div class="product-cat">Compact Mandirs</div>
                         <h3 class="product-name">Om Surya Compact Mandir</h3>
-                        <div class="product-price" style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">Price: ₹ 1,50,000</div>
+                        <div class="product-price"
+                            style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">
+                            Price: ₹ 1,50,000</div>
                         <div class="product-meta">
                             <div class="product-size"><i class="fas fa-ruler-combined"></i> 3 × 2 ft</div>
-                            
+
                         </div>
                         <div class="product-meta" style="margin-top: 10px;">
                             <a href="product-detail.html" class="btn-add-list" style="width: 100%;">ADD TO CART</a>
@@ -359,10 +386,12 @@
                     <div class="product-info">
                         <div class="product-cat">Compact Mandirs</div>
                         <h3 class="product-name">Om Surya Compact Mandir</h3>
-                        <div class="product-price" style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">Price: ₹ 1,50,000</div>
+                        <div class="product-price"
+                            style="font-size: 0.85rem; font-weight: 600; color: var(--maroon); margin-bottom: 12px; font-family: \'Cinzel\', serif;">
+                            Price: ₹ 1,50,000</div>
                         <div class="product-meta">
                             <div class="product-size"><i class="fas fa-ruler-combined"></i> 3 × 2 ft</div>
-                            
+
                         </div>
                         <div class="product-meta" style="margin-top: 10px;">
                             <a href="product-detail.html" class="btn-add-list" style="width: 100%;">ADD TO CART</a>
