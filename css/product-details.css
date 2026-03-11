@@ -2220,6 +2220,7 @@ footer {
     padding: 18px;
   }
 }
+
 /* Related Products Carousel */
 .related-carousel {
   display: flex !important;
@@ -2230,9 +2231,11 @@ footer {
   gap: 15px;
   padding-bottom: 20px;
 }
+
 .related-carousel::-webkit-scrollbar {
   display: none;
 }
+
 .related-carousel .product-card {
   flex: 0 0 calc(50% - 7.5px);
   scroll-snap-align: center;
@@ -2243,6 +2246,7 @@ footer {
     flex: 0 0 calc(33.333% - 10px);
   }
 }
+
 @media (min-width: 1024px) {
   .related-carousel .product-card {
     flex: 0 0 calc(25% - 11.25px);
@@ -2254,15 +2258,18 @@ footer {
   .related-carousel .product-img-wrap {
     aspect-ratio: 1 / 1 !important;
   }
+
   .related-carousel .prod-info {
     padding: 10px 8px !important;
   }
+
   .related-carousel .prod-name {
     font-size: 0.75rem !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+
   .related-carousel .btn-enq {
     font-size: 0.65rem !important;
     padding: 5px 8px !important;
@@ -2323,4 +2330,46 @@ footer {
   border-radius: 4px;
   object-fit: cover;
   border: 1px solid var(--border-gold);
+}
+
+
+/* Fix for spacing under pincode */
+#deliveryResult:empty {
+  margin-top: 0 !important;
+  min-height: 0 !important;
+  display: none !important;
+}
+
+/* Mobile CTA button layout */
+@media (max-width: 768px) {
+  .cta-row {
+    flex-wrap: nowrap;
+    gap: 8px;
+  }
+
+  .btn-add-cart {
+    flex: 0 0 auto !important;
+    min-width: auto !important;
+    padding: 15px !important;
+  }
+
+  .btn-add-cart .mobile-hide-text {
+    display: none;
+  }
+
+  .btn-add-cart i {
+    margin: 0;
+  }
+
+  .btn-buy-now,
+  .btn-enquiry {
+    flex: 1 !important;
+    min-width: 0 !important;
+    font-size: 0.75rem !important;
+    padding: 15px 10px !important;
+  }
+
+  .mobile-hide-icon {
+    display: none !important;
+  }
 }
