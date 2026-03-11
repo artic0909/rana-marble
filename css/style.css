@@ -8,8 +8,8 @@
   --cream-dk: #f5eac8;
   --maroon: #6b1a1a;
   --maroon-lt: #8b2e2e;
-  --deep-purple: #2d1b4e;
-  --indigo: #3d2670;
+  --deep-purple: #3a1c04;
+  --indigo: #5c3012;
   --white: #ffffff;
   --text-dark: #1a0a00;
   --text-mid: #4a2c0a;
@@ -459,7 +459,7 @@ header {
   display: flex;
   align-items: center;
   overflow: hidden;
-  background: linear-gradient(160deg, #1a0a00 0%, #2d1b4e 40%, #6b1a1a 100%);
+  background: linear-gradient(160deg, #1a0a00 0%, #3a1c04 40%, #6b1a1a 100%);
 }
 
 /* Mandala BG */
@@ -697,7 +697,7 @@ header {
   transform: translateX(-50%);
   color: var(--gold);
   font-size: 1.2rem;
-  background: #2d1b4e;
+  background: #3a1c04;
   padding: 0 8px;
 }
 
@@ -819,7 +819,7 @@ header {
        CATEGORIES
     ══════════════════════════════════════ */
 .categories-bg {
-  background: linear-gradient(180deg, #1a0a00 0%, #2d1b4e 100%);
+  background: linear-gradient(180deg, #1a0a00 0%, #5c3012 100%);
 }
 
 .categories-bg .section-title {
@@ -1210,7 +1210,7 @@ header {
        TESTIMONIALS
     ══════════════════════════════════════ */
 .testi-section {
-  background: linear-gradient(160deg, #1a0a00, #2d1b4e);
+  background: linear-gradient(160deg, #1a0a00, #3a1c04);
 }
 
 .testi-section .section-title {
@@ -1299,7 +1299,7 @@ header {
   background: linear-gradient(135deg,
       var(--saffron) 0%,
       var(--maroon) 50%,
-      var(--deep-purple) 100%);
+      var(--indigo) 100%);
   padding: 64px 20px;
   text-align: center;
   position: relative;
@@ -1326,10 +1326,11 @@ header {
 
 .cta-band p {
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 32px;
   font-style: italic;
   position: relative;
+  font-weight: 500;
 }
 
 .cta-buttons {
@@ -1749,7 +1750,7 @@ footer {
     display: flex;
   }
 
-  body {
+  body:has(.sticky-cta-bar) {
     padding-bottom: 72px;
   }
 }
