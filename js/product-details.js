@@ -14,35 +14,84 @@ scrollTopBtn.addEventListener("click", (e) => {
 });
 
 /* ─── Image Gallery ─── */
+/* ─── Image Gallery ─── */
 let currentImg = "./img/hero.png";
-function switchImg(thumb, src) {
-  document
-    .querySelectorAll(".thumb")
-    .forEach((t) => t.classList.remove("active"));
+let currentMediaType = 'image';
+
+function switchMedia(thumb, type, src) {
+  document.querySelectorAll(".thumb").forEach((t) => t.classList.remove("active"));
   thumb.classList.add("active");
+  
   const img = document.getElementById("mainImg");
+  const video = document.getElementById("mainVideo");
+  const zoomHint = document.getElementById("zoomHint");
+
+  currentImg = src;
+  currentMediaType = type;
+
+  // Simple fade out transition for current media
   img.style.opacity = "0";
-  img.style.transform = "scale(0.97)";
+  video.style.opacity = "0";
+  
   setTimeout(() => {
-    img.src = src;
-    currentImg = src;
-    img.style.opacity = "1";
-    img.style.transform = "scale(1)";
+    if (type === 'video') {
+      img.style.display = "none";
+      zoomHint.style.display = "none";
+      video.style.display = "block";
+      video.src = src;
+      video.play().catch(e => console.log("Auto-play prevented", e));
+      video.style.opacity = "1";
+    } else {
+      video.style.display = "none";
+      video.pause();
+      img.style.display = "block";
+      zoomHint.style.display = "block";
+      img.src = src;
+      img.style.opacity = "1";
+    }
   }, 180);
-  img.style.transition = "opacity 0.18s ease, transform 0.18s ease";
+}
+
+// Wrapper for existing onclick calls in main image wrap
+function openLightbox(src) {
+  if (currentMediaType === 'video') {
+    openReviewMediaLightbox(null, 'video', currentImg);
+  } else {
+    openReviewMediaLightbox(null, 'image', currentImg);
+  }
 }
 
 /* ─── Lightbox ─── */
-function openLightbox(src) {
+function openReviewMediaLightbox(element, type = 'image', srcOverride = null) {
   const lb = document.getElementById("lightbox");
-  document.getElementById("lightboxImg").src = src;
+  const lbImg = document.getElementById("lightboxImg");
+  const lbVideo = document.getElementById("lightboxVideo");
+  
+  lbImg.style.display = "none";
+  lbVideo.style.display = "none";
+  lbVideo.pause();
+
+  const src = srcOverride || element.src;
+  
+  if (type === 'video') {
+    lbVideo.src = src;
+    lbVideo.style.display = "block";
+    lbVideo.play().catch(e => console.log(e));
+  } else {
+    lbImg.src = src;
+    lbImg.style.display = "block";
+  }
+
   lb.style.display = "flex";
   document.body.style.overflow = "hidden";
 }
+
 function closeLightbox() {
   document.getElementById("lightbox").style.display = "none";
+  document.getElementById("lightboxVideo").pause();
   document.body.style.overflow = "";
 }
+
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") closeLightbox();
 });
@@ -225,9 +274,47 @@ function submitReview(e) {
     form.reset();
     setRating(0);
     selectedRatingValue = 0;
+    
+    // Clear media previews
+    const previewContainer = document.getElementById("reviewMediaPreview");
+    if (previewContainer) previewContainer.innerHTML = "";
+
     document.getElementById("reviewSuccess").style.display = "flex";
     setTimeout(() => {
       document.getElementById("reviewSuccess").style.display = "none";
     }, 5000);
   }, 800);
+}
+
+/* ─── Review Media Upload Handler ─── */
+function handleReviewMedia(input) {
+  const previewContainer = document.getElementById('reviewMediaPreview');
+  previewContainer.innerHTML = '';
+  
+  if (input.files && input.files.length > 0) {
+    Array.from(input.files).forEach(file => {
+      const reader = new FileReader();
+      const isVideo = file.type.startsWith('video/');
+      
+      reader.onload = function(e) {
+        if (isVideo) {
+          const videoElement = document.createElement('video');
+          videoElement.src = e.target.result;
+          videoElement.className = 'preview-thumb';
+          videoElement.muted = true;
+          // Play a snippet to grab a frame, then pause
+          videoElement.onloadeddata = () => {
+             videoElement.currentTime = 1;
+          };
+          previewContainer.appendChild(videoElement);
+        } else {
+          const img = document.createElement('img');
+          img.src = e.target.result;
+          img.className = 'preview-thumb';
+          previewContainer.appendChild(img);
+        }
+      }
+      reader.readAsDataURL(file);
+    });
+  }
 }

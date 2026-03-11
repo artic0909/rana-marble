@@ -167,23 +167,32 @@
                         title="Add to Wishlist">
                         <i class="fas fa-heart"></i>
                     </button>
+                    <!-- Main Image View -->
                     <img id="mainImg" src="./img/hero.png" alt="Royal Tri-Shikhara White Marble Mandir – Rana Marble" />
-                    <div class="zoom-hint"><i class="fas fa-search-plus"></i> Click to Zoom</div>
+                    <!-- Main Video View (Hidden by default) -->
+                    <video id="mainVideo" controls style="display: none; width: 100%; height: 100%; object-fit: cover;">
+                        <source src="" type="video/mp4" id="mainVideoSource">
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="zoom-hint" id="zoomHint"><i class="fas fa-search-plus"></i> Click to Zoom</div>
                 </div>
 
                 <!-- Thumbnails -->
                 <div class="thumbnails">
-                    <div class="thumb active" onclick="switchImg(this, './img/hero.png')">
+                    <!-- Image Thumbs -->
+                    <div class="thumb active" onclick="switchMedia(this, 'image', './img/hero.png')">
                         <img src="./img/hero.png" alt="Front View" />
                     </div>
-                    <div class="thumb" onclick="switchImg(this, './img/hero2.png')">
+                    <div class="thumb" onclick="switchMedia(this, 'image', './img/hero2.png')">
                         <img src="./img/hero2.png" alt="Side Angle" />
                     </div>
-                    <div class="thumb" onclick="switchImg(this, './img/hero.png')">
-                        <img src="./img/hero.png" alt="Painted View" />
+                    <div class="thumb" onclick="switchMedia(this, 'image', './img/hero.png')">
+                        <img src="./img/hero.png" alt="Detail View" />
                     </div>
-                    <div class="thumb" onclick="switchImg(this, './img/hero2.png')">
-                        <img src="./img/hero2.png" alt="Detail View" />
+                    <!-- Video Thumb -->
+                    <div class="thumb video-thumb" onclick="switchMedia(this, 'video', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                        <img src="./img/hero2.png" alt="Video View" style="filter: brightness(0.6);" />
+                        <div class="play-icon-overlay"><i class="fas fa-play"></i></div>
                     </div>
                 </div>
             </div>
@@ -300,7 +309,7 @@
 
                     <a href="https://wa.me/919876543210?text=Namaste! I am interested in the Royal Tri-Shikhara Mandir (SKU: RM-MND-TRI-001). Please share details and pricing."
                         class="btn-wa-cta" target="_blank">
-                        <i class="fab fa-whatsapp fa-lg"></i> Enquire on WhatsApp
+                        <i class="fab fa-whatsapp fa-lg"></i> Enquire Now
                     </a>
                     
                     <button class="btn-email-cta">
@@ -642,6 +651,16 @@
                         carving details are extraordinary — it looks exactly like the photos from the Rajasthan temples
                         we had seen. Every peacock feather, every lotus petal is individually carved. Our puja room is
                         now truly complete. Rana Marble's team was patient and helpful throughout.</p>
+                    
+                    <!-- NEW MEDIA GALLERY GRID -->
+                    <div class="review-media-grid">
+                        <img src="./img/hero.png" class="r-media-item" onclick="openReviewMediaLightbox(this)" alt="Review Image">
+                        <div class="r-media-item video" onclick="openReviewMediaLightbox(this, 'video', 'https://www.w3schools.com/html/mov_bbb.mp4')">
+                             <img src="./img/hero2.png" style="width: 100%; height:100%; object-fit: cover;" alt="Review Video Thumb">
+                             <div class="r-play-btn"><i class="fas fa-play"></i></div>
+                        </div>
+                    </div>
+
                     <div class="review-verified"><i class="fas fa-check-circle"></i> Verified Customer</div>
                 </div>
 
@@ -663,6 +682,12 @@
                         room. Rana Marble understood our vision perfectly. The quality of marble is unmatched — it glows
                         beautifully in diya light. The team even sent us daily progress photos during the 7 weeks of
                         carving. Highly highly recommend.</p>
+                        
+                    <!-- NEW MEDIA GALLERY GRID -->
+                    <div class="review-media-grid">
+                        <img src="./img/hero2.png" class="r-media-item" onclick="openReviewMediaLightbox(this)" alt="Review Image">
+                    </div>
+                    
                     <div class="review-verified"><i class="fas fa-check-circle"></i> Verified Customer</div>
                 </div>
 
@@ -708,6 +733,46 @@
                         sacred.</p>
                     <div class="review-verified"><i class="fas fa-check-circle"></i> Verified Customer</div>
                 </div>
+            </div>
+
+            <!-- ─── WRITE A REVIEW FORM ─── -->
+            <div class="review-form-wrapper" style="margin-top: 40px; padding-top: 30px; border-top: 1px solid var(--border-gold);">
+                <h3 style="font-family: 'Cinzel', serif; font-size: 1.2rem; color: var(--maroon); margin-bottom: 20px;">Write a Review</h3>
+                <form class="review-form" onsubmit="submitReview(event)" style="display: flex; flex-direction: column; gap: 15px; max-width: 600px;">
+                    <div class="form-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <input type="text" placeholder="Your Name" required class="r-input" style="padding: 12px; border: 1px solid var(--border-gold); border-radius: 4px; font-family: 'Crimson Pro', serif;" />
+                        <input type="email" placeholder="Your Email" required class="r-input" style="padding: 12px; border: 1px solid var(--border-gold); border-radius: 4px; font-family: 'Crimson Pro', serif;" />
+                    </div>
+                    
+                    <div class="stars-picker" style="display: flex; align-items: center; gap: 10px; font-size: 0.9rem;">
+                        <span>Your Rating:</span>
+                        <div class="stars-input" style="color: var(--border-gold); cursor: pointer; font-size: 1.1rem;">
+                            <i class="far fa-star" onclick="setRating(1)"></i>
+                            <i class="far fa-star" onclick="setRating(2)"></i>
+                            <i class="far fa-star" onclick="setRating(3)"></i>
+                            <i class="far fa-star" onclick="setRating(4)"></i>
+                            <i class="far fa-star" onclick="setRating(5)"></i>
+                        </div>
+                        <input type="hidden" id="selectedRating" value="0" required />
+                    </div>
+                    
+                    <textarea placeholder="Write your review here..." rows="4" required class="r-input" style="padding: 12px; border: 1px solid var(--border-gold); border-radius: 4px; font-family: 'Crimson Pro', serif; resize: vertical;"></textarea>
+                    
+                    <div class="form-group review-media-upload">
+                        <label for="reviewMedia" class="r-upload-btn" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: rgba(201, 168, 76, 0.1); border: 1px dashed var(--gold); border-radius: 4px; cursor: pointer; color: var(--text-mid); font-size: 0.9rem; transition: background 0.2s;">
+                            <i class="fas fa-camera"></i> Add Photos / Video
+                        </label>
+                        <input type="file" id="reviewMedia" name="reviewMedia" accept="image/*,video/mp4,video/webm" multiple style="display:none;" onchange="handleReviewMedia(this)">
+                        <div id="reviewMediaPreview" class="r-media-preview-container" style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 10px;"></div>
+                    </div>
+
+                    <div style="margin-top: 10px;">
+                        <button type="submit" class="btn-email-cta" style="width: auto; padding: 12px 24px;">Submit Review</button>
+                    </div>
+                    <div class="review-success" id="reviewSuccess" style="display:none; color: #0f7a3a; padding: 10px; background: #e8f5e9; border-radius: 4px; font-size: 0.9rem; align-items: center; gap: 8px; margin-top: 10px;">
+                        <i class="fas fa-check-circle"></i> Thank you! Your review has been submitted.
+                    </div>
+                </form>
             </div>
         </div>
 
@@ -898,12 +963,17 @@
 
     <!-- ══ LIGHTBOX ══ -->
     <div id="lightbox" onclick="closeLightbox()"
-        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;">
+        style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;align-items:center;justify-content:center;padding:20px;">
         <button onclick="closeLightbox()"
             style="position:absolute;top:20px;right:24px;background:none;border:none;color:white;font-size:2rem;cursor:pointer;z-index:2;">&times;</button>
         <img id="lightboxImg" src="" alt=""
-            style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);"
+            style="display:none; max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);"
             onclick="event.stopPropagation()" />
+        <video id="lightboxVideo" controls
+            style="display:none; max-width:90vw;max-height:90vh;border-radius:6px;box-shadow:0 20px 60px rgba(0,0,0,0.5);"
+            onclick="event.stopPropagation()">
+             <source src="" type="video/mp4" id="lightboxVideoSource">
+        </video>
     </div>
 
     <!-- Floating WA -->
