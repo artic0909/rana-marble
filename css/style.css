@@ -2103,7 +2103,7 @@ footer {
   .nav-inner { padding: 0 5px !important; gap: 5px !important; }
   .nav-actions { gap: 6px !important; }
   .nav-icon-btn { width: 34px !important; height: 34px !important; font-size: 0.85rem !important; margin: 0 2px; }
-  .hero { min-height: 38vh !important; }
+  .hero { min-height: unset !important; height: auto !important; aspect-ratio: 16 / 9 !important; }
   .product-name { font-size: 0.72rem !important; }
 }
 
